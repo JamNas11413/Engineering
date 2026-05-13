@@ -1,0 +1,49 @@
+Full stack development:
+
+🧠 Core Programming Skills
+- HTML: Structure of web pages
+- CSS: Styling and layout
+- JavaScript: Logic and interactivity
+- Python: Backend
+
+
+🎨 Frontend Development
+- React.js
+
+
+
+
+🧱 Backend Development
+Django
+
+- RESTful APIs
+
+- Authentication & Authorization:
+- OAuth, JWT
+
+- PostgreSQL
+
+
+☁️ DevOps & Deployment
+
+- Git & GitHub
+
+- Deployment Platforms:
+- Vercel, Netlify (frontend)
+- Heroku, AWS, DigitalOcean (backend)
+
+- CI/CD Pipelines:
+- GitHub Actions
+
+
+🔐 Security & Performance
+
+- HTTPS & SSL
+- Data validation & sanitization
+- Rate limiting & error handling
+- Caching (Redis, CDN)
+- Load balancing & scalability
+
+debug
+- Chrome DevTools
+- Postman (API testing)

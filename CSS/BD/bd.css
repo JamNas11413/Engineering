@@ -1,0 +1,78 @@
+@font-face {
+    font-family: birthday;
+    src: url("font.ttf");
+    
+}
+
+body { 
+    font-family: birthday;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 3px;
+    text-shadow: 0px 0px 4px black;
+    /* border: 5px solid rgb(234, 34, 197); */
+    margin: 0%;
+}
+
+#desc {
+    text-shadow: 0px 0px 20px black;
+}
+#inst {
+    color: red;
+    text-shadow: 0px 0px 10px black;
+}
+
+
+
+img {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    border:4px solid pink;
+}
+.det {
+    background-color: pink;
+    width: 150px;
+    height: 40px;
+    margin: 15px auto;
+    border-radius: 50%;
+    text-shadow: 0px 0px 8px black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    border: 2px solid red;
+}
+p {
+    font-size: 80px;
+    text-shadow: 4px 0px 0px rgb(18, 17, 17);
+    margin-top: 50px;
+}
+#hero-sec {
+    
+    background-image: url("red.jpg");
+    background-size: cover;
+    
+}
+
+/* #content {
+    background-image: url("");
+} */
+/* 
+#footer {
+    text-shadow: 8px 8px black;
+    background: linear-gradient(rgb(101, 101, 218), rgb(202, 82, 196) );
+    height: 200px;
+    padding: 30px;
+    
+}
+
+#watsapp {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    text-shadow: 4px 4px 4px red;
+} */
+
+
+/* hover and transsitions */
+
+    

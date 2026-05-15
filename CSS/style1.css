@@ -1,0 +1,171 @@
+
+/* centring elemnents with margin */
+
+/* img {
+    width: 600px;
+    height: 400px;
+    display: block;
+    margin-left: auto;   /* auto mean take up the availible space,sense it is a block element is has all horizonal space, here it will take up the space on left side */
+    /* margin-right: auto;
+} */ 
+/* BOTH MARGIN LEFT AND RIGHT HAVE SAME POWER SO not mine not yours AND ELE SET AT CENTER */
+
+/* to center an with margin elemnet you need three things
+    1. specify width-> how will be it in center if it is larger than browser window
+    2. set display to block -> it should have full control on horizontal space in order to center
+    3. set margin left/right: auto ->   */
+
+
+
+
+/* centering our google */
+
+ /* body {
+    width: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;                                             margin: auto === top, bottom, left, right : auto */
+
+/* }  */
+
+/* OR-> for each sep for each elemnt */
+
+
+/* .img {
+    width: 500px;
+    height: 300px;
+    display: block; 
+
+}
+
+input {
+    width: 400px;
+    height: 50px;
+    display: block;
+
+}
+
+button {
+    width: 200px;
+    height: 30px;
+    display: inline;
+} */
+
+
+/* Padding */
+
+/* .card {
+     color:rgba(8, 8, 8, 0.811);     /* by default  browser use pure black for text and pure white for background color => WE SHOULD NEVER DP PURE BLACK AND WHITE B\C NOT GOOD EXP FOR EYES */
+    /* background-color: bisque;
+    width: 300px;   /* as div are block by default so take over all space so we need to give it width */
+    /* margin-top: 50px;
+    margin: auto;
+    padding: 20px;   creates space between content and border of the card         padding: 20px; === pading-top & botton &left & right*\ */
+    /* margin add space outside the border whereas padding adds space inside the border */
+/* default padding is 0px */
+/* } */
+
+
+
+/* border and border radius */
+
+/* .card {
+    color:rgba(8, 8, 8, 0.811);    
+    background-color: bisque;
+    width: 300px;   
+    margin-top: 50px;
+    margin: auto;
+    padding: 20px;   
+    border: 4px solid darkred;   /* border-width border-style border-color */
+    /* border-radius: 15px;   to make rounded corners     */
+/* } */ 
+
+    /* GOOD PRACTICE IS TO REUSE COLORS IN PAGE AND NOT TO HAVE TO AMNY COLORS  */
+
+
+/* you can also set border radius for specific corners */
+/* border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px; */        
+
+
+/* WE CAN INSPECT ELEMENT IN BROWSER BY RIGHT CLICKING ON IT AND SELECTING INSPECT OPTION OR BY PRESSING F12 KEY */
+/* THRE WE CAN CHECK THE BOX MOSEL BY SELECTING THE MOUSE INPECTER IN THE TOP LEFT CORNER AND CLICKING ON THE CARD AND NOW U CAN SEE THE BOX MODEL IN THE STYLES TAB ON THE RIGHT SIDE OF THE INSPECTOR PANEL  */ 
+
+
+/* THE BOX MODEL: */
+    /* margin -> outer most
+    border
+    padding 
+    content -> inner most */ 
+
+/* button {
+    border-color: #cfd9de;
+    color: #0f1419;
+    font-weight: bold; 
+    border: 1px solid;  
+    border-radius: 20%;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+} */
+            
+
+/* fixinig input field : */
+ body {
+    width: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;                                        
+
+} 
+
+
+.img {
+    width: 500px;
+    height: 300px;
+    display: block; 
+
+}
+
+input {
+    width: 400px;
+    height: 50px;
+    display: block;
+
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    display: inline;            /*in inline display we have no control over the width and height*/
+    margin-top: 30px;
+} 
+
+.search {
+    height: 24px;  /*line-heigth ->the height of the line of text*/
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid #d4d6dc;
+    border-radius: 24px;
+}
+
+/* centering button */
+.btn {              /*btns are display inline by default*/
+    /* display: block;     by order of operation top to bottom left to right, thid block will have priority over the inline used before */
+    margin-left: auto;
+    margin-right: auto;   
+    padding-left: auto;
+    padding-right: auto;
+    font-size: 18px;
+    border: none;        /*removw border*/
+    border-radius: 5%;
+    text-align: center;     /*works on all inline ele not just text but in order to align the chiled tags to center we should apply it on parent like body etc*/   
+}
+/* the contrast ratio can be checked by an online contrast cheacker i.e contrast cheaker */    /*ratio of foreground color to background color*/
+/* the contrast ratio should be > 4.5 */

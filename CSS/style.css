@@ -1,0 +1,14 @@
+/* css->Cascading Style Sheets */
+
+body {   /*selector->html elelment to which the style will apply*/
+    
+    font-weight: heavy;     /*property: value;*/
+    text-align: left;
+    margin-top: auto;
+    background: rgb(209, 13, 213);
+    color: white;
+    font-size: 100px;
+}
+
+/* we can inspect in browser and can manipulate the style of the page */
+

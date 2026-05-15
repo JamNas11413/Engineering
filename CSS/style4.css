@@ -1,0 +1,106 @@
+ /* WE INCLUDE BACKGROUND IMAGES IN CSS NOT IN html
+ 
+ WE CAN FIND BACKROUND IMAGES ON UNSPLASH*/
+
+
+ /* background image */
+
+ #hero-section {
+    background-image: url("space.webp");    /*dynamic*/
+    background-size: cover;  /*cover the entire area*/
+    padding: 0 0 600px 0;
+ }
+ body {
+    color: white;
+    /* background-image: url("space.jpg");  css func */
+    
+    margin: 0;
+    text-align: center;
+     /* embedded font from google fonts */
+    font-family: "Orbitron", sans-serif;
+    color: #82a5ca
+ }
+   
+
+ h1{
+    font-size: 50px;            /*google fonts -> search google scify google font as its a sopace proj-> so if that was not web safe font we can embed it by simply copying sometext into head of html and css to css */
+    /* font-family: ; */
+    text-shadow: 0px 0px 4px black;     /*to increase the readability as they consist of same shades*/
+    
+ }
+ .exp  {
+    /* text-decoration: underline; */
+    border-bottom: 4px solid whitesmoke;
+    
+ }
+ button {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    background-color: white;
+           /* b/c buttons don't inherite font family so we will give it and if we wanna inherite we can use the inherite keyword */ 
+    /* font-family: inherit; */
+    color: #82a5ca;
+    /* or  to tell it*/
+
+    /* embedded font from google fonts */
+    font-family:  "Orbitron", sans-serif;
+    font-weight: 900;   /*as we sdd to html font weight 400 to 900*/   /*font weight property can both tack numeric an dnamed values i.e bold === 800  numeric generally upto 900*/
+ }
+
+ /* in some cases the google font may not enough for the fonts i.e if we are amking a web in honour of the god father movie and we want to use the font used in the movie title so in that case we can download the font from sites like dafont.com and then we can include it in our project folder and then we can use @font-face rule to include it in our css file like below */
+ /* 1001fonts.com -> search the-godfather font -> download -> extract -> copy the ttf(extension for font formates) file to project folder */
+ /* now u can use the @font ruless in css */
+ /* I.E TO father class */
+
+ /* top make it availiblke 1st */
+ /* @font-face { */
+    /* font-family: godfather;     can tell whatever i want */
+    /* src: url("Prestoria.ttf");
+ }
+
+.father {
+    font-family: godfather;
+} */
+
+
+/* span tag _> its a utility class func targeting s a specificmthing*/
+/* .ad {
+    background-color: aqua;
+    border: 2px solid yellow;
+    
+} */
+/* .cta {
+    display: inline;
+    color: blue;
+    border: 2px solid black;
+    background-color: brown;
+} */
+
+
+#logo {
+    width: 200px;
+    height: 100px;
+}
+
+
+/* animated/video/gif/webp  background */
+/* we will change the background image url jpeg to webp{very similer to gifs but consume less data than gifs}
+i can find webp on web giphy-> search engine for gips */
+
+
+
+
+/* choosing color palletes from an image
+    we can fetch color from the image{background) and use it in the design as that will look pretty
+    WE CAN USE COOLORS -> CLICK ON MORE -> IMAGE PICKER
+    
+    now i find the pallets so i csn udse them noe as my txt colors*/
+
+#footer {
+    height: 50px;
+    text-align: center;
+    background-color: aliceblue;
+    font-size: 20px;
+    /* padding-top: 25px; */
+}

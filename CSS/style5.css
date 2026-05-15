@@ -1,0 +1,42 @@
+/* text shadow */
+/* body {
+    background-color: red;
+} */
+h1 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100px;
+    margin-top: 300px;
+    text-align: center;
+    /* text-shadow: 5px 5px black;            /*text shadow: x-asis y axis blur color {x and y can be -ve and +ve both as in the direction of coordinate system means -x vill add shadow towards lef and so on i.e}*/
+    /* text-shadow: -5px -5px black;  */ 
+    /* text-shadow: -5px 5px 0px black; */
+}
+
+/* tricks */
+/* body { */
+    /* background-color: whitesmoke; */
+/* } */
+/* h1 { */
+    /* text-shadow: 0px 0px 10px black;        can be saw still having nice design */
+    /* text-shadow: 5px 5px 0px black;  */
+    /* and so on */
+    /* must try */
+/* } */
+
+/* when the background and the text has same then we should use the blur effect to sand out */
+
+
+
+
+
+
+align-item
+flex direction
+:hover
+gradient
+grouping selecter ->h1, h2 ,...
+
+
+
+figma

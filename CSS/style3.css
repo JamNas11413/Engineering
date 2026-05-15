@@ -1,0 +1,96 @@
+/* CSS inheritance
+    help writes DRYer vode (DRY _> don't repeate yourself)., so u don't write the same again and again just write one and cascade it to other places   [cascade means a hirarchical process where sffect flows downward through layes}
+    help to avoid bug
+    br more efficeint 
+     */
+
+     /* SOME CSS PROPERTIES DON'T GET INHERITANCE you can google it  */
+/* img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-left: 1800px;
+} */
+
+/* now i wanna center all the stuff in the article onw way is */
+/* h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+p {
+    text-align: center;
+} */
+
+/* but this way is not that efficient  SO 2ND IS INHERITANCE*/
+/* i can applty the propert to article which is their parent tag and will apply to all children of article  */
+/* article {
+    text-align: center;
+} */
+/* and this is calle inheritance  */
+
+
+/* FONT */
+    /* IT HAS GREATE AFFECT ON THE MSG LIKE DIFFERNT FONT FOR LAUGHING AND SERIOUS MESSAGES */
+
+
+
+    /* OK SO WHEN A CLIENT SENDS A REQUEST TO A SERVER FOR  APGE IT SEND BACK THE HTML, CSS, JS, ASSEST(VIDEOS, IMAGES ETC) AND FONT BUT SOME WEBS DON'T SEND THE FONT INSTEAD THEY USE A FONT THAT ALREADY PRE INSTALLED ON CLIENT which are  also called as "web safe fonts" and it is safe to use on eof the web safe fonts instead of sending the font recipe from server
+    SO WHAT ARE THEM you can search for web safe fonts SO WHEN U ARE USING ONE OF THEM THEN U DON'T SEND THE RECIPE */
+ /* body {      <!-- TO SET FONT 1ST NORMALLY SELECT THE BODY AS THERE ARE EVERYTHING THAT ARE ON PAGE --> */
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif;  THEN U ADD THE FONT STACK means that IF 1ST FONT IS NOT AVAILABLE THEN 2ND WILL BE USED IF 2ND IS NOT AVAILABLE THEN 3RD WILL BE USED AND SO ON and if it can't even find any of them as web safe fon't then itm says give me any of the sann-sarif category of fonts [THERE ARE MAINLY ONLY TWO CATEGORIES sarif-> sonsists of fonts having the decorative ending  AND san-sarif-> have don't the decorative ends as sans means without] */
+    /* font-size: 16px;
+    line-height: 1.5; */
+/* } */
+
+
+
+/* MARGIN/PADDING SHORTAND
+1. IF U HAVE TO APPLY MARGIN TO ALL SIDES INSTEAD OF DOING IT SEPARATELY FOR EACH SIDE U CAN JUST SAY THAT MARGIN: VAL; WILL ADD TO ALL SIDES 
+2. BUT IF U HAVE 4 DIFFERENT VALUES then you can margin: 10, 20, 30, 40->clockwise{top right bototm left}
+3. IF I HAVE SAME VALUE FOR TOP AND BOTTOM AND AN ANOTHER VALUE FOR BOTH LEFT AND RIGHT SO WE CAN : MARGIN : TOP/BOTTOM LEFT/RIGHT; */
+
+/* japanese flag */
+/* .rectangle { */
+    /* width: 400px;
+    height: 200px;
+    border: 1px solid yellow;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;  
+    border-radius: 100%; 
+    background-color: red; */
+    /* margin: 25px 0 25px 125px;           top right bottom left , IF I DON'T HAVE  A BOX THEN THEN THE RIGHT SIDE MARGIN 0 MEANS NO MARGIN     */
+/* } */
+
+
+/* ANOTHER SOLUTION TO THE FLAG */
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin: 15% auto;       /*top/bottom(y-axis) and center(x-axis)*/  /*finding overall height and width of your web page=> just inspect and hover over the body in html*/
+    background-color: red;
+}
+
+/* if u wanna find the size of the browser window simply inpect go to console and
+ window.innerWidth
+546
+window.innerHeight
+383*/
+
+
+/* IF WE HAVE ONLY LEFT RIGHT MARGIN THEN  */
+
+/* ****** margin: 0 auto;    zero means no margin */
+
+
+
+

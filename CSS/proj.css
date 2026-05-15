@@ -1,0 +1,164 @@
+
+
+/* img {
+    width: 500px;
+    height: 300px;
+    display: block;
+    margin-top: 30px;
+}
+
+input {
+    width: 400px;
+    height: 50px;
+    display: block;
+}
+button {
+    width: 200px;
+    height: 30px;
+    display: inline;
+} */
+
+/* INLINE VS BLOCK ELEMENT */
+/* BLOCK: */
+    /* desplay block stacks on top of each other verticaly */
+    /* it blocks all the space horizontally acc to its height and width and control them */
+    /* i.ein img and in input */
+/* INLINE: */
+    /* display inline lines up horizontally */
+    /* it only takes as much space as required and cannot control height and width */ 
+    /* i.e in button      */
+
+/* INLINE-BLOCK: */
+    /* it is a mix of both inline and block */
+    /* it lines up horizontally but we can control height and width */
+
+
+/* margin */
+    /* space around element */
+    /* types: */
+        /* margin-top -->add margin to the top of element */
+        /* margin-bottom */ 
+        /* margin-left */
+        /* margin-right */ 
+        /* margin: auto;  --> sets all margins to auto */
+    /* i.e in img  */
+
+    /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+/* ROLE OF DIVS */
+    /* divs are block level elements used to group other html elements */
+    /* 
+
+/* ROLE OF DIVS */
+    /* divs are block level elements used to group other html elements */
+    /* we can apply styles to divs and it will apply to all the elements inside it */
+    /* helps in organizing the html structure */
+
+
+/* img {
+    width: 500px;
+    height: 300px;
+    display: block;
+    
+}
+
+input {
+    width: 400px;
+    height: 50px;
+    display: block;
+}
+
+/* instead of adding separately to both of themi can add once to their parent div */
+/* div {
+    margin-top: 30px;       /* adding margin to div adds margin to both img and input */
+/* }
+
+button {
+    width: 200px;
+    height: 30px;
+    display: inline;
+}  */ 
+
+/* the element selector can cause bugs b\c we can have many div(ele of same tag name) and to some we might don't wanna apply the property but it will apply to all the divs */
+/* to avoid this we use class and id selectors */
+
+/* CLASS SELECTOR: */
+    /* we can assign a class to an element using class attribute */
+    /* we can apply styles to all elements of same class using .classname selector */
+    /* i.e in divs below */
+
+.img {
+    width: 500px;
+    height: 300px;
+    display: block;
+    
+}
+
+input {
+    width: 400px;
+    height: 50px;
+    display: block;
+}
+button {
+    width: 200px;
+    height: 30px;
+    display: inline;
+}
+/* adding margin to divs with class name '1st and 2nd div' */
+
+.fstdiv {
+    margin-top: 30px;
+}
+
+.scnddiv {
+    margin-top: 10px;
+} 
+
+
+
+
+/* <!-- challenge2 -->
+ <!-- flag --> */
+/* 
+.flag {
+    width: 600px;
+    height: 700px;
+    border: 2px solid black;
+    margin: 20px;
+}
+.red {
+    background-color: red;
+    width: 100%;
+    height: 33.33%;
+}
+.blue{
+    background-color: rgb(18, 77, 214);
+    width: 100%;
+    height: 33.33%;
+    margin-bottom: 100px;       /* margins don't alter height of element of element they just desplace it  */
+/* }           
+.green {
+    background-color: green;
+    width: 100%;
+    height: 33.33%;
+} */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

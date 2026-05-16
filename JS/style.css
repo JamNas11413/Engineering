@@ -1,0 +1,85 @@
+body {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 60px;
+    color: red;
+    text-shadow: -8px 8px 8px #0d0e0d;
+    background: linear-gradient(rgb(16, 196, 209),rgb(203, 130, 142));
+}
+#hero {
+    background: linear-gradient( rgb(137, 206, 18), rgb(232, 4, 209))
+}
+#count-el {
+    color:blue;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#count-el:hover {
+    color:black;
+}
+
+#increment-btn {
+    background-color: rgba(173, 5, 5, 0.704);
+    color: aliceblue;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5%;
+    font-size: 20px;
+    border-bottom: 8px solid rgb(138, 44, 6);
+}
+#increment-btn:hover {
+    background-color: rgba(173, 5, 5, 0.704);
+    color: aliceblue;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5%;
+    font-size: 20px;
+}
+
+#save-btn {
+    display: block;
+    background-color: rgb(7, 238, 11);
+    color: aliceblue;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5%;
+    font-size: 20px;
+    border-bottom: 8px solid green;
+}
+#save-btn:hover {
+    display: block;
+    background-color: rgb(7, 238, 11);
+    color: aliceblue;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5%;
+    font-size: 20px;
+}
+#save-feature {
+    color: black;
+    font-size: 40px;
+    text-shadow: 0px 0px 4px whitesmoke;
+}

@@ -158,3 +158,6 @@ console.log(prices);        // (9) [225, 580.5, 270, 810, 45, 452, 154, 154, 15
 //console.log(comp)   // (5) ['mete', 'OTA', 'mediLink', 'IBM', 'Netflix']
 //console.log(comp.push("amazon")) //6   // return the element which is
 ////console.log(comp)   // ['mete', 'OTA', 'mediLink', 'IBM', 'Netflix', 'amazon']
+
+
+

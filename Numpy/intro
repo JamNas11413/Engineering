@@ -1,0 +1,332 @@
+# Numpy:
+#     numerical python
+#     used in field involues heavy data processing
+
+
+# python is realy slow so nympy which is written in c make python faster in data processing
+# i.e: numpy arrays are 10X faster than python lists
+
+
+# we can also perform vectorize ops with numpy arrays, which can't be done with python lists
+# i.e, python: [1,2,3]*2 = [1,2,3,1,2,3]
+#      numpy: numpy.array([1,2,3])*2 = [2,4,6]
+
+
+# numpy gives us tools and speed to handle data 
+
+import numpy as np  # alias
+# # to check
+# print(np.__version__)   # dunder
+
+
+# array = np.array([1,2,3])*2
+# print(array)
+
+
+
+# my_list = [1,2,3,4,5]
+# #if i have to multiply the ordinary pyhtoin lust by 2
+# double_list = []
+# for i in my_list:
+#     double_list.append(i * 2)
+
+# print("python's list",double_list)  # python's list [2, 4, 6, 8, 10]
+# print(type(my_list))    # <class 'list'>
+
+# # but with n umphy arrays
+# my_list_array = np.array([1,2,3,4,5])*2
+# print("numpy's array",my_list_array)    # numpy's array [ 2  4  6  8 10]  # there  is no cammas
+# print(type(my_list_array))  # <class 'numpy.ndarray'>   # nd == means "n dimentional"()
+
+
+
+# # numpy array is superior to a python list 
+#     # its fast
+#     # more operation s can performed
+
+
+# # HOW TO CHECK HOW MANY TIME A STATEMNET TAKE IN EXECUTION TO FIND SLOW AND FAST 
+
+
+
+# # zero dimentional array:
+#     # like a single point
+# single_array = np.array('a')
+# print(single_array.ndim)    # ndim == number of dimention   ## 0
+
+# # one dimentional array:
+#     # like a single row
+# single_array1 = np.array(['a', 'b', 'c'])
+# print(single_array1.ndim)   # 1 
+
+
+
+# MULTIDIMENTIONAL ARRAYS:
+
+# two dimentional arrays
+# multi_array = np.array([['a', 'b', 'c'],
+#                         ['d','e','f']])     # two rows three columns(2 by 3)
+# print(multi_array.ndim)  # 2
+
+# multi_array1 = np.array([['a', 'b', 'c'],
+#                         ['d','e','f'],
+#                         ['d','e','f'],
+#                         ['d','e','f'],
+#                         ['d','e','f']])     # number of square brackedts at end and strat are 2
+# print(multi_array1.ndim)    # 2  {sometime it is refrerd to a matrics of some order}
+
+
+# # three dimentional arrays
+# three_array = np.array([[['a', 'b', 'c'],
+#                         ['d','e','f']]])     
+# print(three_array.ndim)     # 3
+
+# three1_array1 = np.array([[['a', 'b', 'c'],
+#                         ['d','e','f'],
+#                         ['d','e','f'],
+#                         ['d','e','f'],
+#                         ['d','e','f']]]) # number of square brackedts at end and strat are 3 
+
+# print(three1_array1.ndim)   # 3
+# print(three1_array1.shape)  # (1, 5, 3) => tuple of int => (depth, rows , columns) {depth==layers}
+# print(three1_array1)
+# [[['a' 'b' 'c']
+#   ['d' 'e' 'f']
+#   ['d' 'e' 'f']
+#   ['d' 'e' 'f']
+#   ['d' 'e' 'f']]]  ### only one laye
+
+# three2_array1 = np.array([[['a', 'b', 'c'],['d','e','f']],
+#                         [['d','e','f'],['d','e','f']],
+#                         [['d','e','f'],['w','e','r']]])
+
+# print(three2_array1.ndim) # 3
+
+
+
+# # but 
+
+# three3_array1 = np.array([[['a', 'b', 'c'],['d','e','f']],
+#                         [['d','e','f'],['d','e','f']],
+#                         [['d','e','f'],['w','e']]]) # number of ele is less in last sequence/list
+
+# # print(three3_array1.ndim)   # ValueError
+
+# # so each list should have a consistant no. of ele with in each list
+# # if i ran-out of data i can add a placeholder to avoid the error
+# three4_array1 = np.array([[['a', 'b', 'c'],['d','e','f']],    # 1st layer
+#                         [['d','e','f'],['d','e','f']],    # 2nd layer
+#                         [['d','e','f'],['w','e','_']]]) # placeholder => '_' / ' '/ '#'   # 3rd layer
+
+# print(three4_array1.ndim) # 3
+# print(three4_array1)
+# ## [[['a' 'b' 'c']
+# #   ['d' 'e' 'f']]
+
+# #  [['d' 'e' 'f']
+# #   ['d' 'e' 'f']]
+
+# #  [['d' 'e' 'f']
+# #   ['w' 'e' '_']]]       # 3rd layer
+# print(three4_array1.shape)  # (3, 2, 3) => tuple of int => (depth, rows , columns) {depth==layers}
+
+
+
+
+## layer==> 2 square barces at start and at end defines the layer {without the outer most bracket}, i.e,
+# ## [[['a' 'b' 'c']
+# #   ['d' 'e' 'f']]    # one layer
+
+
+
+
+
+
+# # IN PYHTON LIST WE CAN ACCES AN ELE 
+# python_list = [[['a', 'b', 'c'],['d','e','f']],
+#                         [['d','e','f'],['d','e','f']],
+#                         [['d','e','f'],['w','e']]]
+
+# print(python_list[1][1])    # ['d', 'e', 'f']  # chain indexing  # means here: in 2nd elemnt in the main list, 2nd ele in the sub(2nd) list
+# print(python_list[1][1][0])  # d
+
+# # but in  numpy:
+#     # we have access to multidimentional indexing
+#         # faster than chain indexing
+# numpy_array = np.array([[['a', 'b', 'c'],['d','e','f']],
+#                         [['d','e','f'],['d','e','f']],
+#                         [['d','e','f'],['w','e', '#']]])
+
+# print(numpy_array[1,1]) # ['d' 'e' 'f']
+# print(numpy_array[1,1,0]) # d
+# # to make "bade"
+# print(numpy_array[0,0,1] + numpy_array[0,0,0] + numpy_array[0,1,0] + numpy_array[0,1,1] ) # bade
+
+# indexing out of the range will throw an error 
+
+# # in three layers we have [1,1,1] center 
+
+
+
+
+# SLICING
+    # array[start : stop : step] # the 3rd is optional by default setted to 1{one after it[zero will means stop here=> so step can't be zero]} # ending index is exclusive {not included}
+# array = np.array([[1,2,3,4],
+#                   [5,6,7,8],
+#                   [9,0,1,2],
+#                   [2,3,4,5]])
+
+# print(array.ndim)
+# print(array.shape)
+# # 2d array of 4 by 4
+
+
+# print(array[0:1])  # [[1 2 3 4]]        # subscript operater => [] => with it we acces to ele in a sequence
+# print(array[0:1:1])
+# print(array[0:]) # start tro end ==> ALL    
+# print(array[:])  # strat from start and end at end
+# print(array[:2]) # 0 and 1
+# print(array[::2]) # all with step of 2 means every 2nd row in all
+
+# # steps: zero will means stop so can't be zero, 1 will maens the one after the current, 2 will means the 2nd one after the current{every 2nd row}, and so on
+# print(array[0:3:2])
+# # [[1 2 3 4]
+# #  [9 0 1 2]]
+#     # 1st and 3rd 
+
+# # the step can be -ve {as -ve means reverse direction }
+# print(array[::-1])  # return all the rows in reverse {as -ve means reverse direction and 1 is default step so it just meabs that reverse it}
+# # but what if:
+# print(array[::-2])  # {as -ve means reverse direction, so 1st it will reverse the array and then select ele  with a step of 2[- => reverse, 2 => step from start to end (but this time in reverse array)]}
+# # [[2 3 4 5]
+# #  [5 6 7 8]]
+
+
+
+
+
+
+# #  HOW CAN I USE SEPARATER in it i.e print(array[:], sep='#')
+
+
+
+
+
+
+# # COLUMN SELECTION
+# print(array[:,0]) # means selct  all rows and their 1st ele # [1 5 9 2]
+# print(array[:,1]) # 2nd column  # [2 6 0 3]
+# print(array[:,-1]) # last column    # [4 8 2 5]
+# print(array[:,-2]) # 2nd last column  # [3 7 1 4]
+
+# # now in selected rows
+# print(array[:3,2])  # [3 7 1]  # in 1st three rows i want 2nd column
+
+# # range of columns
+# print(array[:3,:2])     # in 1st three rows print 1st two columns
+# # [[1 2]
+# #  [5 6]
+# #  [9 0]]
+#     # two columns: 1,5,9 and 2,6,0
+# print(array[:3,:2:2]) # we can also include the step here as it also indexing
+# # [[1]
+# #  [5]
+# #  [9]]
+#     # in 1st three rows i want 1st 2 columns by step of 2{ every 2nd}
+#     # printed only one column b\c there is no 3rd column{overall 2} so no step possible/exists
+
+
+
+
+
+# # BOTH ROWS AND COLUMNS
+#     # i.e, 1st two columns of 1st two rows
+# print(array[0:2, 0:2])  # like selecting a quadrant of the 4 by 4 matrix
+# # [[1 2]
+# #  [5 6]]
+
+# print(array[0:2, 2:]) # another quadrant
+# # [[3 4]
+# #  [7 8]]
+
+
+
+
+
+
+
+# ARITHMETIC 
+
+# scalar arithmetic 
+    # a linear algebra term means a single value
+
+# scaler operations:
+    # applying operations of the single value to entore array
+
+
+# array = np.array([[1,2,3]])
+# print(array + 1)    # [[2 3 4]]
+# print(array - 1)    # [[0 1 2]]
+# print(array * 2)    # [[2 4 6]]
+# print(array / 2)    # [[0.5 1.  1.5]]
+# print(array // 2)   # [[0 1 1]]
+# print(array ** 3)   # [[ 1  8 27]]
+
+
+
+
+# # vectorize math func 
+#     # vector is another linear algebra term means single dimention such as 1D list
+
+# # numpy has some built=in math func
+# print(np.sqrt(array))   # [[1.         1.41421356 1.73205081]]
+# array1 = np.array([[1.3,2.5,3.99]])
+# print(np.round(array1)) # round by general rules i.e <0.5 will be the number's integrl part while >=0.5 will give one added to itegral part # [[1. 2. 4.]]
+# print(np.ceil(array1)) # round up # [[2. 3. 4.]] => 1.3 = 2 in round up # add 1 to each no. heaving one atleast point above 
+# print(np.ceil(2)) # 2
+# print(np.ceil(2.1)) # 3.0
+# print(np.floor(array1)) # round down # [[1. 2. 3.]] # only take integral parts of the given no.
+# print(np.sqrt(array)) # [[1.14017543 1.58113883 1.99749844]]
+
+
+# # in the numpy's math module there are also built-in const i.e pi
+# print(np.floor(np.pi)) # 3.0
+
+
+
+
+# radii = np.array([[1,2,3]])
+# area = np.pi * radii**2  # both vector ans scaler
+# print(area)
+
+
+# element-wise operation
+array1 = np.array([1,2,3])
+array2 = np.array([4,5,6])
+
+print(array1 + array2)  # addition of two matrices    # [5 7 9]
+print(array1 - array2) # [-3 -3 -3]
+print(array1 * array2) # [ 4 10 18]
+print(array1 / array2)  # [0.25 0.4  0.5 ]
+print(array1 // array2) # [0 0 0]
+print(array1 ** array2) # [  1  32 729]
+
+
+
+# comparison operators:
+    # using it we can make boolean arrays, filter data, and use element-wise comparison
+
+scores = np.array([91,55,100,732,82,64])
+print(scores)   # [ 91  55 100 732  82  64]
+print(scores == 100)    ## will returns a boolean array # [False False  True False False False]
+print(scores >= 60)     # [ True False  True  True  True  True]
+scores[scores < 60] = 0
+print(scores)   # [ 91   0 100 732  82  64]
+
+
+
+
+
+
+
+

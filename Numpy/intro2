@@ -1,0 +1,169 @@
+import numpy as np
+# # BROADCASTING:
+#     # broadcasting allows  numpy to perform operations on arrays with different shapes by virtually  expanding dimensions 
+#     # so they match the larger arrays shape 
+
+#     # rules:
+#         # the dimensions have the same size 
+#         # or
+#         # one of the dimensions has a size of 1
+
+# array1 = np.array([[1,2,3,4]])  # 2d array with one row
+# array2 = np.array([[1],[2],[3],[4]])  # 4 rows one column
+# print(array1.shape) # (1, 4)  1 by 4
+# print(array2.shape) # (4, 1) 
+# # by looking at their shape , can we broadcast them:
+# # will rule are: the ab0ve:
+#     # while matching the dimension they either have to be the same no. or one of them have to be 1
+# # we read the dimensions from right to left
+# # so the right one(no. of columns) is compatible as their one is 1
+# # also the left(no. of rows) are also
+# result = array1 + array2
+# print(result)   
+# result = array1 * array2    # will give a 4 by 4 matrix
+# print(result)   
+# result = array1 / array2
+# print(result)   
+
+
+# # if the shapes were not follow the rules it will throw an error that the shapes are not compatible 
+
+
+
+# # multiplication table
+# arrayx = np.array([0,1,2,3,4,5,6,7,8,9, 10])
+# arrayy = np.array([[0],[1],[2],[3],[4],[5],[6],[7],[8],[9], [10]])
+# tables = arrayx * arrayy
+# print(tables)  # a 10 by 10 array 
+# they are compatable as they have 1 in both the columns and rows
+
+
+
+
+# # AGGREGATE FUNCTION:
+#     # Sumarize data and typically return a single value
+
+
+# arrayg = np.array([[1,2,3,4,5],
+#                    [6,7,8,9,0]])
+# print(np.sum(arrayg))
+# print(np.mean(arrayg))
+# print(np.std(arrayg))  # standard daviation{measure of spread within data}
+# print(np.min(arrayg))
+# print(np.var(arrayg)) # varient{square of the std}
+# print(np.max(arrayg))
+# print(np.argmin(arrayg))  # argument min {position[index] of min vakue}
+# print(np.argmax(arrayg))
+
+
+# # to select area/axis
+# # i.e i want to add all columns
+
+# print(np.sum(arrayg,axis=0))    # [ 7  9 11 13  5]  # 0 == columns
+# print(np.sum(arrayg,axis=1))  #   [15 30]    # 1 == rows
+
+
+
+# thre are more 
+
+# FILTERING
+    # REFERS TO THE PROCESS OF SELECTING ELEMENTS FROM A ARRAY THAT MATCH CERTAIN CONDITION/S
+
+ages = np.array([[21,17,19,20,16,30,18,65],
+                 [39,22,15,99,18,19,20,21]])
+
+teens = ages[ages < 18]     # boolean indexing 
+print(teens, teens.shape)  # [17 16 15]  (3,)
+
+# by using boolean indexing this will flatten my 2D array into 1D
+    # ages = 2D
+    # teens = 1D
+# to preserve the shape:
+
+
+# every one b/w 18 and 65
+# adults = ages[[ages >= 18] & [ages <= 65 ]]   # wrong way
+adults = ages[(ages >= 18) & (ages <= 65 )]    # in pyuhton we use the "and" operater for and but numpy uses c style arrays and and will use ampersend"&" and for "or" it uses the bar"|"
+print(adults)   # [21 19 20 30 18 65 39 22 18 19 20 21]
+even = ages[ages % 2 == 0]
+
+
+# to preserve the shape:
+    # adulty = np.where(conditon, array, fill_value)
+adulty = np.where(ages <= 18, ages,0)  # fill values => 0 | -1 | np.nan
+# as we are preserving its original state every no matching ele will be replaced by the fill value
+print(adulty)
+
+# the whre is slow than boolean indexing so only use when the shape preserving is important 
+
+
+
+# RANDOM NUMBERS
+
+rng = np.random.default_rng()
+
+# integers
+print(rng.integers(1,7))  # end is exclusive ao upto 6  # the range is not optional
+
+# for readability i can also use keyword argument  {not necessary}
+print(rng.integers(low=1,high=7))
+# i can also set size 
+print(rng.integers(low=1,high=7, size=3))   # [4 1 3] 
+# the random numbers will be stored in 1D array 
+# if i want to store them in 2D array
+print(rng.integers(low=1,high=7, size=(3,2)))  # for 2D 3 rows 2 columns
+# [[4 1]
+#  [4 4]
+#  [6 4]]
+
+# there is also something called seed{to repeat the outpu}
+    # the seed is optional so if you didin't define numpy will
+rng1 = np.random.default_rng(seed=1)
+print(rng1.integers(low=1,high=7, size=(3,2)))
+# [[3 4]
+#  [5 6]
+#  [1 1]]
+# [[3 4]
+#  [5 6]
+#  [1 1]]
+
+# as mainy time u run the prog will give the same ouput
+# seed is useful when we wnat to reproduce the same result
+
+
+# float 
+print(np.random.uniform())  # uniform neans every no. has equal chances of being selected
+# every time  u run it will give a random no. b\w 0 and 1{can't be one [exclusive]}
+
+
+# i can also provide a range also to the uniform func
+print(np.random.uniform(1,7))   #3.3886941654012768
+print(np.random.uniform(1,7,3)) # [6.58630715 4.20910746 4.67918447]  # 1D array
+print(np.random.uniform(1,7,(3,2)))
+# [[4.69356799 2.41506229]
+#  [4.13154443 1.42706425]
+#  [4.04830593 6.56494733]]
+
+
+# seed can also be setted
+
+
+
+# shuffle{} on array
+arrys = np.array([1,2,3,4,5])
+
+rng = np.random.default_rng()
+print(arrys)
+rng.shuffle(arrys)
+print(arrys)
+
+
+# random choice 
+choice = rng.choice(arrys,size=(2,3))
+print(choice)   # a random choice
+
+
+
+# let say i wanna pic a frandom item from an array:
+    # just ask google if there is built in support
+

@@ -54,3 +54,16 @@ EDA
 ALL WITH:
 	SKILLS + PROJECTS(for the field) + CERTS + EXPERIENCE + AI NATIVE + LINKEDIN(meeting my future partners)	
 
+
+
+
+
+
+
+
+
+to print list of files nd fpolders in current_dir
+import os
+>>> current_dir = os.getcwd()
+>>> for intery in os.listdir(current_dir):
+... print(intery)

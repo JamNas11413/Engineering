@@ -1,0 +1,177 @@
+Django:
+    the jango
+    free and open source web app framework
+
+framework:
+    combo of certain components and packages
+    in order to build a complex app u should have some stuff ready made
+
+
+
+we use django in backend dev
+
+we django to build backend app in python
+
+
+mcp:
+    model view controler
+
+in django we something similer to mcp called mvt/mtv{model view template}
+
+
+
+
+django: 
+    fast
+    components
+    security
+    scalability
+
+
+django alsogives us a light weight server to acces we: python manage.py runserver  { in project folder}
+
+
+
+
+static and dynamic pages:
+    static page means everyone will see the same page i.e someone's porfolio
+    dynamic pages will  everyone will see different pages i.e everyone facebook
+
+we do the static stuff in html, css and js while dynamic we do in django where processing envolves
+
+
+
+
+in django we have a project(complete web app) and then the project will have different apps like login stuff are one app,etc
+
+the moment we ask the url django will searchfor the urls maping so it will fined home and which will be shown as "\" or mpt
+
+
+direcotory structure:
+
+    mange.py:
+        it's a cammond line utility and allows to interact with project from terminal
+
+    __init__py:
+        it's an empty file but it tells python that this is a package
+
+    settings.py:
+        it's a file where we will do all the settings of our project like database and static files
+
+    urls.py:
+        it's a file where we will do all the url mapping of our project
+
+    wsgi.py: web server gateway interface
+        it's a file which is used to deploy our project on server
+
+    asgi.py: asynchroniuse server gateway interface
+        it's a file which is used to deploy our project on server but it's used for asyncronous server
+
+     templates:
+        it's a folder where we will put all our html files
+
+    static:
+        it's a folder where we will put all our css and js files
+
+
+# settings.py:
+    BASE_DIR = Path(__file__).resolve().parent.parent  -> in setting.py we have this and via this django is accessed to the root project directory
+
+    SECRET_KEY = 'django-insecure-do_9gn  __> this is a secret key and is used to make hashes
+
+    DEBUG = True  __> this is used to show the error in the browser if we have any error in our code, development server(loca; host) should always be in debug mode but in production we should always turn off the debug mode
+
+    ALLOWED_HOSTS = []  __> this is used to specify the host which can access our project
+
+    INSTALLED_APPS = [  __> this is a list where we will put all our apps which we have created in our project
+
+    MIDDLEWARE = [  __> this is a list where we will put all the middleware which we want to use in our project
+
+    ROOT_URLCONF = 'djangolrn.urls'  __> this is used to specify the url configuration file which we want to use in our project
+
+    TEMPLATES = [  __> this is a list where we will put all the settings related to templates in our project
+    
+    WSGI_APPLICATION = 'djangolrn.wsgi.application'  __> this is used to specify the wsgi application which we want to use in our project
+    databases
+
+
+MVT is django design template:
+    model view template 
+
+
+view is request handler and it will process the request and return the response
+b\c in this we define functions in it which will take a req and return a res 
+
+
+debugging 
+    toolbar
+    vs cose lunch json
+
+
+
+
+
+Flow of a web request:
+    when a req arrives at a django app the incoming request url is compared to the list of paths in th eurls.py in the variable urlpatterns 
+
+    when thre is a url match, it selects a "view" which is a bit of code that handle any database access and then produce and delivers the responce to the browser
+
+    the view access database indirectly through an abstraction called model
+
+    this is a general web pattern called "model-view-controller" or MVC
+
+
+
+a user clicks on a button on the page, the browser intercept it and make  a socket connectoion to the backend server:
+                    the server has some functions like:
+                        routing: -> urls.py
+                        views: -> views.py, forms.py
+                        models: -> DBs -> model.py
+
+
+
+
+
+
+django-admin
+
+Type 'django-admin help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    optimizemigration
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+        
+
+
+django-admin is a utility that we can work with using all the above cammond
+
+manage,py is 'similer' yet more powerful than the django-admin
+
+
+
+MVT vs MVC

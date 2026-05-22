@@ -1,0 +1,93 @@
+https://www.djangoproject.com/
+
+steps of making a django project
+
+	1) make a folder on disktop and open it in vs code using terminal(terminal -> ls -> cd Desktop 
+	    ls -> cd myProj  => when inside the folder_prog ++> code . )
+	2) make a virtual env in the folder {python3 -m venv .venv}
+	3) activate the env {source .venv/bin/activate}   [to deactiavte type: deactivate]
+	4) now install django { to varify type in python shell/REPL: import django, print(django.get_version())}   pip install Django
+	5) create the project with django {django-admin startproject name } -> we can use perod to tell that use the current directory as prj directory
+
+we cAN specify the port during runserver {defaault = 8000} , if this port is busy (another app is running on it) we can sepecify another port 
+http://127.0.0.1 === localhost(my compuetr)
+	[ localhost:port ]
+
+{USE GIT AND BEFORE EVERY AI REQUEST MAKE A COMMIT AND ALSO AFTER ADDING EVERYTHING }
+
+{
+    sudo apt update. sudo apt install python3 python3-pip python3-ven.
+    python3 -m venv myenv.
+    source myenv/bin/activate.
+    deactivate.
+    python -m venv myenv.
+    myenv\Scripts\activate.
+    deactivate.
+}
+
+
+
+to anotherpage in url 
+		http://127.0.0.1:8000/about/
+
+
+apps in django are moduler mean swe can use it in other projects too and are independant
+
+
+python manage.py ==> means you are calling something from the file 
+
+
+
+framwwork:
+	collection of set of tools needed in the journey of engineering stuff.
+	
+why framework instead of manually coddihng everything:
+    it gives us many biiltin stuff that can save our time and energy
+
+
+manage.py is a wrapper around django-admin but more powerfull as it knows avbout the settings of our project
+
+python3 manage.py
+
+now u will see all the cammonds that django admin rovides
+
+we should also configured the python interpreter inside our virtual env 
+	by going to cammond palete the search for python interpreter then select intr path
+	and in terminal we enter 
+		pipenv --venv
+	then we will get the path of our virtual env and we will copy that and paste it in the python interpreter path and select it		
+
+
+
+OK
+
+
+
+
+two main methods of building web apps:
+	1) generate the page on the server and return the htl page the browser
+	2) only return the data needed to build the page and let the browser do the work of building the page using javascript. this uproach is more scalable and is used in modern web apps.
+		there are tools that are used to generate the page on the browser like react and angular and vue. these are called frontend frameworks.
+
+django is a backend framework that can be used to build web apps using the first approach but it can also be used to build APIs that can be consumed by frontend frameworks using the second approach.
+	the server becomes a data provider and the frontend framework becomes the consumer of that data and is responsible for building the page using that data. this is called a decoupled architecture.
+	seerver = gateway to the data
+		do we can provide different endpoint for different data 
+		it becomes an interface fro the data
+			API: like buttons (endpoints) of a remote (api)
+				all the endpoint together represents the interface that we use to talk to server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

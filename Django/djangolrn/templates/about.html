@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  <!--# django templating engine -->
+    <script src="{% static 'js/index.js' %}" defer></script>    <!--the defer will wait it untill all the page is loaded i.e js will loaded at end -->
+</head>
+<body>
+    <h1>huhhhhhhhhthis is about</h1>
+    <p> from about.html</p>
+    <p>checkout my <a href="/contact/">contact</a> or <a href="/">home</a> page</p>
+    <p>this is dynamic: {{name}}</p>
+
+    {% if greeting %}
+    <h1>hi and {{greeting}}</h1>
+    {% else %}
+    <h1>welsome broooooo!</h1>
+    {% endif %}
+    
+</body>
+</html>
+
+
+<!-- with django e should not render html that much we should build endpoint for data  -->

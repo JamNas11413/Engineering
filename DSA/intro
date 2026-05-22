@@ -1,0 +1,466 @@
+
+GOALS:
+    1).    Learn to think algorithmically. Break problems down into easier-to-solve parts.
+    2).   Learn to think about how to organize data for more efficient access. Break problems down into data models that make sense.
+    3).    Learn and practice performance optimization. Make your code run faster and more efficiently, even with more data.
+
+
+What Is a Data Structure?
+
+Data structures are just organizational tools that allow for more advanced algorithms. You're already familiar with some of the simplest data structures:
+
+    Lists: Ordered collections of data
+    Dictionaries: Key -> value mappings
+    Sets: Unordered collections of unique data
+
+
+
+What Is an Algorithm?
+
+An "algorithm" is just a set of step by step instructions that can be carried out to solve a problem. People use algorithms all the time without even realizing it. Practically every function you write in code is an algorithm (well, kinda), even if it's a simple one.
+
+
+
+"{
+
+Don't worry about memorizing this stuff. In particular, don't worry about memorizing the algorithms and data structures themselves. 
+
+My philosophy is that, 
+        "it's mostly a waste of time to memorize anything that's a Google search away".
+
+}"
+
+
+
+What Is an Algorithm?
+
+In the context of computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions. In short, an algorithm is:
+
+    Defined: there is a specific sequence of steps that performs a task
+
+    Unambiguous: there is a "correct" and "incorrect" interpretation of the steps{can be either true or false with noting in b\w}
+
+    Implementable: it can be executed using software and hardware
+
+
+
+
+Algorithms are usually written in "pseudocode" (pronounced "sue-dough-code") because an algorithm is a higher-level description of a solution to a problem. 
+An algorithm doesn't care if it's implemented in Python, Go, TypeScript, or (gasp) Java. 
+Pseudocode is just plain English that describes the steps of the algorithm.
+    i.e:
+        Start with an original string called S and a new empty string called R.
+        Loop through S from its last character to its first character, and for each one, add it to the end of R.
+        Once you’ve processed all the characters, return R.
+
+
+
+in cs we want to writre fast  algorithms 
+    i.e if we are working on only 5 values the result will be almost intantanious
+    BUT WHAT IF we have 5 billion values
+
+
+
+    
+
+
+
+
+
+
+
+
+
+Exponents
+    An exponent indicates how many times a number is to be multiplied by itself.
+
+For example:
+
+53 = 5 * 5 * 5 = 125
+
+Sometimes exponents are also written using the caret symbol (^):
+
+5^3 = 53
+
+
+    5**3 is read as "5 to the power of 3"
+    5 is the "base"
+    3 is the "exponent"
+
+
+{
+x**1 = x
+x**0 = 1
+}
+
+Exponent 	Expanded Form 	    Result
+22 	        2 * 2 	            4
+23 	        2 * 2 * 2 	        8
+32 	        3 * 3 	9
+33 	        3 * 3 * 3 	        27
+42 	        4 * 4 	16
+43 	        4 * 4 * 4 	        64
+44 	        4 * 4 * 4 * 4 	    256
+
+
+2^10 == 1024
+
+
+Exponents Grow
+    Exponents grow very large very quickly. Let's take a look at an example of them doing that, in code.
+        2**6 as almost twice of 2**5
+
+
+
+
+The kind of sequence, where each term is found by multiplying the previous term and by a constant(r), is called a geometric sequence or geometric progression.
+
+
+a(sub)n = a1 × r^(n-1)
+    n is index of the no. we are trying to fined i.e 7th no.
+
+i.e if i wanna know 7th no. where initial no.(a1) is 100 and the fixed no. is 3:
+ a sub(7) = 100 * 3 ** 7-1
+        = 100 * 3 ** 6
+        = 100 * 729
+        = 72900
+
+
+
+
+
+Non-Linear Growth
+
+    Exponents are important to understand when it comes to the execution speed of an algorithm. If the number of operations grows quickly as the amount of input data increases, the algorithm will become slower and slower.
+        Linear 	        Quadratic
+        2 * 2 = 4 	    2 ** 2 = 4
+        3 * 2 = 6 	    3 ** 2 = 9
+        4 * 2 = 8 	    4 ** 2 = 16
+        5 * 2 = 10 	    5 ** 2 = 25
+        6 * 2 = 12 	    6 ** 2 = 36
+        7 * 2 = 14 	    7 ** 2 = 49
+        8 * 2 = 16 	    8 ** 2 = 64
+        9 * 2 = 18 	    9 ** 2 = 81
+
+
+https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/HV3CXvi-560x400.png
+
+in the img above:
+    The doubling formula, 2*x, results in linear or straight growth.
+    The quadratic formula, x^2, keeps growing faster and faster.
+
+
+
+
+
+What Does This Have to Do With Code?
+
+Generally we try to avoid writing code that causes the usage of a resource to grow quadratically (with an exponent).
+
+    Sometimes that's a lot of computations (CPU utilization / slowness).
+    Sometimes that's a lot of memory usage (RAM utilization)
+    Sometimes that's a large storage requirement (disk space)
+
+A notable exception is in cryptography and security: we want to force attackers to waste resources trying to get at our information.
+
+
+
+
+How much larger is 2^64 than 2^32?
+    ans: 2^32
+
+
+
+
+
+
+
+
+
+
+Logarithms
+    A logarithm is the inverse of an exponent.
+
+    2^4 = 16
+
+    log2^16 = 4
+
+"log2^16" can be read as "log base 2 of 16", and means "the number of times 2 must be multiplied by itself to equal 16".
+    "log2^16" might also be written as log2^(16)
+
+Some more examples:
+Logarithm 	    Result
+log2^2 	        1
+log2^4 	        2                               {bases in logarityhms is written in as subscript}
+log2^8 	        3
+log2^16 	        4
+    in programming it is common for the base to be 2 as we are working with only 2 no.s 0 and 1 but it can be other as well
+
+log10^10 	    1
+log10^100 	    2
+log10^1000 	    3
+log10^10000 	4
+
+log2^2 =1(exponent of 2) == log10^10 = 1(exponent of ten)
+    as 2^1 = 2 and 10^1 = 1
+
+log2^16 = ?  means that what will be the no. that iraised to 2 to give 16 i.e 2^? = 16
+
+
+python syntax:
+    There isn't a language-level operator to calculate a logarithm, but we can import the math library and use the math.log() function.
+
+import math
+
+print(f"Logarithm base 2 of 16 is: {math.log(16, 2)}")
+# Logarithm base 2 of 16 is: 4.0
+
+
+
+when we write a programe that get slower in time exponentialy as its inputs size grow 
+    => MEANS THE PROGRAME IS REALY SLOW 
+
+BUT
+
+if the programe only gets slower in time logarithmicly as it input size grow it is gonna be a very fast programe 
+
+
+
+
+
+Exponents grow very quickly, and logarithms grow very slowly. A logarithm is the inverse of an exponent.
+
+https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/HZLqsOE-735x720.png
+
+
+Generally speaking, it's nice when we can write code that uses log(n) time to run, where n is the amount of data to process. For example, let's say we have a list of 1,000,000 users, and we want to write an algorithm that finds the user with the most followers.
+
+If it takes 1 millisecond to check one user (let's just pretend), 
+    --> a linear algorithm would take 1,000,000 milliseconds, or about 16 minutes and 40 seconds.
+
+    --> A quadratic algorithm (exponent) would take 1,000,000,000,000 milliseconds, or about 31.7 years.
+
+    --> However, a logarithmic algorithm would only take 20 milliseconds! 
+
+Here's a table to illustrate the difference:
+
+Input Size 	Linear (n*2) 	Quadratic (n^2) 	Log (log2(n))
+10 	        20 ms 	        100 ms 	                3 ms
+100 	    200 ms 	        10,000 ms 	            7ms
+1,000 	    2,000 ms 	    1,000,000 ms 	        10 ms
+10,000 	    20,000 ms 	    100,000,000 ms 	        14 ms
+100,000 	200,000 ms 	    10,000,000,000 ms 	    17 ms
+1,000,000 	2,000,000 ms 	1,000,000,000,000 ms 	20 ms
+
+
+
+ms = 10^-3s == 0.001s = 1/1000 S
+
+
+the result of which operation grows slowest: logarithm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Factorials:
+    The factorial of a positive integer n, written n!, is the product of all positive integers less than and equal to n.
+    i.e: 5! = 5 * 4 * 3 * 2 * 1 = 120
+
+        1! = 1          # [1 have a facter:1]
+        2! = 2*1 = 2
+        3! = 3*2*1 = 6
+        4! = 4 * 6 = 24
+    special/edge cases:
+        0! = 1              {many math but: a product with no facters at all evaluates to 1}   
+img:
+        DSA/picNotes/Screenshot_2026-03-09_09_18_31.png
+
+
+The results of a factorial grow even faster than exponentiation!
+
+
+n! grows faster than 2^n:
+
+	    n! 	    2^n
+2 	    2 	    4
+3 	    6 	    8
+4 	    24 	    16
+5 	    120 	32
+6 	    720 	64
+
+
+in pyhton the "!" is not a factorial sign, we have to define the func:
+
+def calc_factorial(n):
+    factorial = 1
+    for i in range(2, n+1):
+        factorial *= n
+    return factorial
+calc_factorial(5)
+
+
+
+https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/sAsSTn0-702x400.png
+
+
+
+n 	n!
+2 	2
+3 	6
+4 	24
+5 	120
+6 	720
+7 	5,040
+8 	40,320
+9 	362,880
+10 	3,628,800
+11 	39,916,800
+12 	479,001,600
+13 	6,227,020,800
+14 	87,178,291,200
+15 	1,307,674,368,000
+16 	20,922,789,888,000
+17 	355,687,428,096,000
+18 	6,402,373,705,728,000
+19 	121,645,100,408,832,000
+20 	2,432,902,008,176,640,000
+
+How much larger is 564! than 563!?  => 564 time {as {563!} * 564}
+
+Which grows the fastest as n increases? [n^2, n!, log2n] => n!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exponential Decay:
+    In physics, exponential decay is a process where a quantity decreases over time at a rate proportional to its current value.
+
+    We've found that LockedIn influencers tend to lose followers similarly. This means that the more followers you have, the faster you lose them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Logarithmic Scale:
+    In some cases, data can span(the amount of space that something covers.) several orders of magnitude, making it difficult to visualize on a linear scale. A logarithmic scale can help by compressing the data so that it's easier to understand.
+
+    For example, at LockedIn we have influencers with follower counts ranging from 1 to 1,000,000,000. If we want to plot the follower count of each influencer on a graph, it would be difficult to see the differences between the smaller follower counts. We can use a logarithmic scale to compress the data so that it's easier to visualize.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mean and Median:
+    Means and medians are two of the most common ways to "summarize" a group of numbers.
+
+
+Mean:
+    The mean (or "average") of a group of numbers is the sum divided by the count of those numbers.
+        
+        For example, say we have the numbers 2, 5, 1, 6, 75:
+            2 + 5 + 1 + 6 + 75 = 89
+            89 / 5 = 17.8
+
+        The mean is 17.8.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Median:
+    The median of a group of numbers is the middle number after sorting them.
+
+    For example, say we have the numbers 2, 5, 1, 6, 75:
+        Sort the numbers: 1, 2, 5, 6, 75
+        The middle number is 5, so the median is 5.
+
+    If there is an uneven count of numbers, the median is the mean of the two middle numbers.
+        i.e, 1,2,3,4,5,6 => 3+4/2 == 2.5
+        so the median is 2.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Which Is Usually Best?
+    It feels like everyone always talks about averages... so you might think that the mean is the more useful "representative" value from a group of numbers. The problem is, as you can see above, a big outlier like 75 skews the mean, while the median is less affected by it.
+
+    As a rule of thumb, the median is often a more accurate representative number of a group, especially if there are outliers in the data. It can just be a bit more work to calculate because it involves sorting instead of simple arithmetic.
+
+
+median act like a representative no. of a grp of data

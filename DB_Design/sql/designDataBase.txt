@@ -1,0 +1,42 @@
+designing a good DB requires a bit of plaining and can take some time 
+a well structured db palya critcal role in the succes of an app and can scale easily
+
+Data Modeleing: 
+    4 steps:
+        1) understand the bussines requirement 
+            clloect all the info for it, take inspiration etf etc 
+
+
+        2) build a conceptual Modeleing 
+            visual representation of the db
+        
+        3) build a logical model:
+            is an abstract datamodel independant of db technology just show you the tables etc
+
+        4) build a physical model 
+            implementation of logical modele in a particuler database technology {like mysql etc}
+
+
+1) understand bussines reqs: 
+    can be done by talking to owners, their expectations, functionalities of the app,  sevices etc
+
+
+    i.e for a plateform in which instructer can upload their cources and student can be enroled in one or more cources
+
+after this step we will mve to 2
+
+
+
+2) build a conceptual Modeleing 
+    will reprents the entities an dtheir relationships 
+
+        entities:
+            stds and cources 
+
+
+            we will need to visually see them and thier relationships we can do that wirth: ENTITY RELATIONSHIP(ER)
+
+            
+
+
+

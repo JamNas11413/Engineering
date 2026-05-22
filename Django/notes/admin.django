@@ -1,0 +1,83 @@
+it pre deifined we ca access through admin/ in browser
+
+to create dn tpe in terminal 
+    python3 mange.py createsuperuser
+
+
+to change passward: python3 mange.py changepassword admin
+
+
+
+customizing:
+    to change the top most title: Django Administration
+
+    we can apply customization in urls.py in core of app as admin imported there but we can alsp ctr click on the urls of : path('admin/', admin.site.urls), and can bring change i the file itself
+    OR:
+
+
+registering models:
+    so we can manage them in admin site
+
+we do it in admin.py
+
+
+changing the default representation of a model instance that is shown the django Admin
+ we overide the magic / dunder str func 
+
+    so the model define:
+    we alreday have which which give the default represnetation of str:
+
+        def __str__(self):
+        return super().__str__()
+
+
+    so we change the default representation and returm  self.title
+    
+    def __str__(self):
+        return self.title
+
+    now how to sort the tiles:
+         back to the model of whose ibject we are trying to sort 
+         and there we will define a Meta class for specifying the default orderring of the objects 
+         i.e:   
+            class Meta:
+                orderring = ['title']
+
+
+customizing the list page:  
+    like add new columns and make it editible etc
+    in admin.py 
+
+
+ # adding computed columns like inventory = here + there etc
+    @admin.display(ordering='inventory')  # to apply sorting 
+    def inventory_status(self, product):
+            if product.inventory < 10:
+                 return 'low'
+        
+            return 'OK'
+
+
+
+
+
+
+
+WE CAN CUSTOMIZE BOTH LIST AND FORMS 
+
+
+
+
+
+
+
+WHAT WE CA  DO TO MINIMIZE QUERIES TO db:    {we can check for queries in django debug toolbar}
+    1) preload related objects
+    2) 
+
+
+
+
+{
+    JUST KNOW WHAT YOU WANT AND THEN SEARCH FOR THAT YOU CAN SEE HOW TO DO so
+}

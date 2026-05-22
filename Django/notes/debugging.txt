@@ -1,0 +1,12 @@
+DEBUGGING
+
+in vs-code:
+    if the output is differ from expected we can check it here line by ine to know whre rhong go wrong 
+    clock on the run and debug icon on left of vs code {above extension}
+    it will say to create a luch.json file 
+        basically we need to create the lunch profile so vs code knows how to run or debug this app
+    so click on luch.json and select django
+    it will give a vscode directory inside which will be luch.json
+
+    we can insert breakpoints by clicknig on the line 
+        vs code will exe everyline of code untill it hits the breakpoint, from that point onward we can exe our code lin eby line 

@@ -1,0 +1,83 @@
+Models:
+    use to store and retrieve data
+    models are just python classes and for each type of data we will have sepaarete class and so separate table in the databas4
+    the classes converted into tables after migration 
+    
+
+1st step is figuring out the pieces of data we wanna store
+    like for an e commerce, we can have:
+        product:
+            title
+            description
+            price 
+            inventory
+            etc
+        genre:
+            food
+            fashion
+            etc
+        category/collection:
+            shoes
+            cloths
+            fastfoods
+            girls fashion
+            etc
+        
+    product can belong to one and only one collection {here}
+        there is 1 to many relations {collections 1 ------------ * prod}
+
+
+relationships can be:
+    1 to 1 {1 to 1}
+    1 to many {1 to */n}
+    manyt to many {n to n  or * to *}
+
+
+django will create id for every item by itself 
+
+each app can have its own Model
+
+UNIX PHILOSOPHY:
+    each app should do only job and do that will
+
+if apps are dependant on each other it can cause probs like if we update on eit might crash other or we need to install all of them in our next project
+
+SO THERE SHOULD BR NO DEPNDANCIES
+selp contained and zero coupling plus high cohesion(focus)
+
+
+search:
+    django field types
+
+
+model classes:
+    class Products(models.Model):   the module is free defined we willl need to import it and then 
+    inherite it to our class 
+
+{
+    evry time i am using a field i should be reading their docxs 
+}
+
+
+all the field follow the options like null etc down at the docxs
+choice is one of them 
+
+choice field:
+    docxs
+
+
+one to one relationships between to modesl:
+    
+
+
+{
+    design the database
+    then code the model
+    then when you are sure that the model is completed at all, make migration  { we can update the schema after running migration as well, justy update the model class make migration  and then run it and u will see the change in th db schema}
+    then create the migration and check the database schema 
+    then populate it in shell etc to see in admin
+    can also design different model in different classes
+    
+}
+
+

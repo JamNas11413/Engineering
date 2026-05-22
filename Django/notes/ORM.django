@@ -1,0 +1,99 @@
+ORMs:
+    object relational mappers
+    in relational dbs data is stores asrows in tables 
+        so when pulling up this dat from the db we needa convert each row into an object
+        so for each record we will have to create a new obj
+
+
+    it solve the problem 
+
+    ORM mapes object to relational record
+    so we don't nedda write sql code to query or manipulate data, qwe can in an OOP lang
+
+
+while dealing with complex queries we have to write a sql code as orm can't produce efficient sql in such scenario
+
+
+
+    orms example:
+        django migrations -> it makes our db tables with writtinga any sql code
+        model class is aprt of django orm 
+{views.py}
+
+managers and querysets:
+        import the model: from app.models import model
+
+        Model.object 
+            object = > return a manager obj 
+                manager is an interface to the db
+                a remote control witha bunch of burtons to talk to the db
+                have a bunch of methods like all(),  filter() tc 
+
+            Model.objects.all()  -> to pull out all the record in the table and return a query set obj{an obj that incapsulate a query}
+                          .get() -> vor getting the single obj etc 
+
+
+
+        why querysets:
+            query sets are laazy meaning thwey will be eavluated aT A LaTTER point 
+            the reason we use them is because through it we can make a complex query 
+
+
+        we have other methods that give result instantly like count() it gives us a numbr so we don't do any complex query stuff with a number
+
+
+        RETRIEVING OBJECTS: 
+            the objects manger has a bunch of methods   
+                like: all()-> give a queryset and when it evaluated iut give all the objects in a given table 
+                    get(id=1/pk=1) -> retiurn a sdingle obj with the id return an actual obj {wehen we use pk django will auto convert it the name of the primary key field }
+                        but 
+                            if we do get(pk=0) and the id does not exist, it will throw an exception so we should 
+                                try:
+                                    views.py
+
+
+
+        FILTERING DATA:
+            field loo-ups => docs
+
+            some are caSE SENSITIVE WECAN MAKE IN CSE SENSITIVE +. TITLE__CONTAIN -> CASE SENSITIVE
+
+                                                                 TITLE__ICONTAIN -> CASE IN-SENSITIVE
+
+
+COMPLEX LOOK UPS USING Q OBJ:
+    applying multiple filters 
+    to apply: products: inventory < 10 AND price <20
+
+    views.py and docs for more
+
+
+
+REFRENCOING FIELD USING F OBJ:
+
+    views.py
+
+
+SORTING:
+    we sort data using the order_by() method of the objects class
+
+    docs: queryset api refrence
+
+
+
+# LIMITING RESULTS:
+        # often we dont wanna show all product to the user in one disk
+        # we wanna show pages of products
+
+    product = Products.objects.all()[:5]  # 1st 5 (0 to 4)
+
+
+    docs
+
+
+SELECTING FIELDS/column TO QUERY:
+    product = Products.objects.values('id', 'title')
+
+
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

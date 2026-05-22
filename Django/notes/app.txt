@@ -1,0 +1,22 @@
+app:
+    an app is part foa project that will perform specifictask and will have its own model etc
+    apps should ot be enter dependant because latter when we will modify one app it may creash another one
+    it should be completely stand alone 
+    it should not be a monolithi.e performing lots of task 
+
+
+EXTENDIBG PLUGABLE APPS:
+    IF WE HAVE DEPENDANCIES (I.E IMPORT OF APPS) WE  could bot buitd and deploy independantly 
+    we needdda decouple such apps:
+        how:    
+            goal is that they should not know anythoing about each other at all
+            so we can create a new app in this project 
+                which will know about both of these apps 
+
+                    in the new app in admin module we gonna import both the dependant apps {or speifically those which we need (due to which the dependancy is)}
+
+
+
+
+        DOCS OR MOSH PART 1 AT LAST
+

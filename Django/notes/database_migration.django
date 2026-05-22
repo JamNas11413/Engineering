@@ -1,0 +1,65 @@
+setting up the datbase:
+
+supported dbs engines:
+    dafult: sqlLite {use for light projs}
+    postgres
+    mySQL
+    etc
+
+ceating migrATIONS:
+    we use migrations to create or update oue db tables based on the models we created
+
+we can chanhge the default description of the migration file but so to be done with latest so no dependancies on the file name, otherwise we will update it in the other migration files
+
+
+python3 manage.py makemigrations                (for those which e difeined)  -> udjango will look for all the istall aps in our project and for each app it has created a new migration fikep
+python3 manage.py migrate
+
+every migration has it own name in numbers{we can change the name as will, just make sure that no other migration depend on it , if depends then we will have to change the refrence as will. we should change name of last miration as no other migration depends on it at tghis time } we ctr+click ti go to it in terminal
+for each app we will have it own migrATIONS
+
+
+SLUG:
+    a serach engine optimization technique 
+    contains only letter numbers unedrscors and hypens , so any other chars are goonna remmove like space etc
+
+each migration is like a commitmin version control sys
+
+running migrations:
+     so  now we have a bunch of migrations 
+     each migration representrs a set of changes 
+     so each igration sis like a commit in a version constrol sys 
+
+     SO NOW WE NEEDA RUN OUR MIGRATIONS TO GENERATE OUR DB SCHEMA 
+     
+     so python3 manage.py migrate
+
+
+     workflow:
+      chNGE / MAKE
+      CRAETE MIGRATIONS
+      RUN IT
+      WE CAN SEE IT IN MIGRATION table
+
+
+reverting migration
+    if you wanna change a particuler statement in the previous migration u can just delete the statement from th emodel and make a othewr migrationbut
+    if u wanna revert thw complete migration you needa downgrade your datbase 
+
+        python3 mange.py migrate app 0003 
+
+
+    to properly do so:
+     we nedda delete the code of the migration from the model and also the migration file
+
+
+
+Meta:
+IF YOU WANRT MORE CONTROL ON THE DATABASE SCHEMA LIKE CHANGING NAME OF A TABLE ETC ETC 
+    WE CAN DO THAT BY DEFINING Meta DATA WE CAN SERCH FOR IT 
+
+
+
+
+
+we should follow the default convention of a framework 

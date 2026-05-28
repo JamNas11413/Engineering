@@ -1,0 +1,12 @@
+*hi at beganing* original data with new:->hmmmmmmmmHey! Guys how are you?
+
+              This is our demo file of type & suffex of .txt to perform basic operation on the file.
+
+we use th write func in append mode, to write at the end.
+we use th write func in append mode, to write at the end.
+we use th write func in append mode, to write at the end.
+we use th write func in append mode, to write at the end.
+we use th write func in append mode, to write at the end.
+
+
+## no empty line after 1st time i run it this is b\c there is no \n at the end of line of new data so the one just show the end of the line.

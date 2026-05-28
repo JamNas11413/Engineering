@@ -1,0 +1,19 @@
+this is beganning and data will add at end in append plus
+ in a+ mode python can create the file if not exist. in a+ mode python can create the file if not exist.
+ (the end means the last place of curser) i.e if i place curser 10 line after without even writting anything and run that will be the end
+
+
+
+
+
+
+
+
+
+
+  in a+ mode python can create the file if not exist.(this is magic brooooooo...){{py==python}{charm==magic}} in a+ mode python can create the file if not exist.
+  (it doesn't mean that if i place curser in b/w data(at last) that will end)(what is means is at the last of data; as i move curser from line to line i write data havuing empty spaces but that also data)
+
+
+  ****}SHOULD READ{****
+

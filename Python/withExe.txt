@@ -1,0 +1,5 @@
+i will open this file in read mode first so it will so this data(i'll copy) will showed
+but as i'll open it in w mode after the first statement acc to flow of execution so this will truncate all the file
+And for the 2nd time time if i run the same programe it will show error at its not readable
+
+(the programe is in withExe.py)

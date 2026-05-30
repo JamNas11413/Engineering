@@ -1,0 +1,245 @@
+React:
+    facebook faces a problem that they can't show reaction and notification in real time, for that we have to reload page{they were using PHP}
+    so in 2013 an engineere built a library to solve the problem{it shows the stuff in real time}
+    browser's nature is that if some thing updated in the page then update the overall DOMtree, so the entire page will be render, which is very in efficient
+
+    use to build and arange UI
+    it use jsx
+    so th elibrary has a different uproach:
+        it does not upadte the main DOM tree directly, instead it updates its own virtual DOM
+            the virtual DOM tree is exact copy of the real dome tree
+            but they have only on edifference: which is that whenver there is a change in virtual DOM only the change will be updated and not the over all page will be refreshed
+
+    features:
+        low/zero page reload
+        extreme use of reusable components
+        very efficient 
+
+the node modules is like virtual env for Django and all the app stuff will be here{it comes from: npm i}
+{
+npm create vite
+    cd to project dierectory and npm -i for node modules
+npm run dev
+}
+
+Directory Structure:
+    node modules:
+        stuff that the app needs to run, we will never work in it
+        libs etc are here needed for thje project to work
+    public:
+        for static data that won't be processed by server, and typically refered to using a URL to the public data. like font's publiuc images linkks etc
+    src:
+        assets:
+            all the static file that will be processed by the server like icons, svgs, logos etc
+        components:
+             we create it to put all of our components
+        files:
+            app.css:
+                style for components, we have to import it
+                we can do all of it in index.html so we can also delete it 
+            index.css:
+                global style, we don't have to import it as it is global{in main.jsx it is already import}
+            app.jsx:
+                the parent component of all other components
+            main.jsx:
+                the main component which triggers the app.jsx, we generally don't edit it
+        git ignore:
+                all the stuff that will be ignored by git will pushing it to github, prevent data leaking
+        index.html:
+            main entry point
+            thye first foile that is loaded to browser and it has a dive with id root which have all the stuff
+        pacakge.json:
+            it has all tghe meta data about our project
+        vite.config and eslint.config:
+            are configuration file
+        readme.md:
+            info abput the project in markdown
+        eslint:
+            we can also make our custom rules that will be followed by all devs to maintain specific pattern and stylling
+        
+
+jsx: javascript XML
+    html + javascript
+    html like lang that alllow certain more flexibility like <h1>1+1</h1> will give 2 , which is not true for html
+    we will write it but it will be converted into js under the hood 
+    i.e function call in jsx:
+        can be both:
+            call(), <call/>
+        
+import and export:
+    two types of export:
+        default export , named export
+
+ default export
+    if i wanna export just on thing from a file i will use default export
+        in import wwe don't have to write the exact name we can write what ever we need because the file is just exporting the single stuff so what ever will be refering ti the thing 
+
+    named xepot:
+        we have to eritye the exact name waht we are expiorting{var/func etc} anf the files
+
+
+real DOM vs virtual DOM:
+    real DOM:
+        the tree of html tags 
+        if we change/update something in it, the entire DOM will reload
+        the entire page will reload
+
+    virtual DOM:
+        the copy of real dom 
+        so if we change/update an ele it will update the exact ele in virtual dom and not the entire page 
+        then it will compare the virtual DOM with the real DOM and thus 
+
+vite:
+    a bunder that helps us to make folder of react 
+    to make a project: npm create vite
+
+component:
+    sub contained section of code that function as a reusable building block
+    we will make component of something that can repeate
+    name should be having upercase 1st letter like Hello etc 
+
+compoent:
+    import React from "react"     # we wite it because the jsx will convert to: React.createelement(h1) etc , so the react will come from here      # don't required it in every compoent since react 17 it is done under the hood
+
+    const HelloWorld = () => {  
+        return (
+        <h1>Hello World</h1>
+        )
+    }
+
+
+    export default HelloWorld       # because it will be imported in app.jsx  
+
+
+we also write css boyler plate in index.css:
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body, html{
+        width: 100%;
+        height: 100%;
+    }
+        
+
+react styling:
+    STYLING IN REACT CAN BE DONE THROUGH TAILWIND CSS, MATREIAL UI, MODULE CSS
+
+
+class is js reserverd word so we use className for the css class
+
+
+dynamic data:
+    {}
+    <h4>price: {33000 * 280}</h4>
+
+
+
+
+
+fragments:
+ we can't return two so we use an emoty wrapper 
+ <>
+    
+ </>
+
+
+ to add js in a component:
+  inside the return we will use curly braces while outside it and above it inside the func we will not use the curly braces
+
+css property:
+    curser pointer give us the hand click figer amaaaaaaaaaaaaaaaaazing
+
+adding css styling to react components:
+    1) external css -> like file, import using class and sub classnames 
+    2)  moduler -> create dierectory for each component i did that in button dir AND THEN IMPORT THE style  {use if the project is very big and can leasd to naming complicts external css}
+    3) inline style -> should never be used hhhhhhhhh because can lead to complication like all values should be string as jsx cpomma separated etc etc 
+
+
+Props: -> properties
+    read only properties that are shaired between components
+    a parent compo can send data to chiled component
+    <component key=value>
+
+    props.jsx 
+
+    PropType:
+        a mechanism through we ensure that the passed value is of the correct types
+        age: propType.number
+
+    default props:
+        default value for props ijncase they are not passed by parrent
+
+Conditional Rendering:
+    it allows us to control what to render baaed on certain condition 
+    throughit we can show, hide or change compoents
+
+
+events:
+    change/action in ui 
+    we triger it usingbuttons usualluy
+
+    events.jsx -> notes file
+
+    click events:
+        an interaction when a user clicks on an obj ele
+        we can respond to clock by passing a handler to onClick() event handler
+
+    onChange():
+        is an event handler use primaraly with form ele
+        including <input>,<textarea>,<select>,<radiobutton>
+        it trigers a func everytime its value of input chnages 
+
+    event param:
+         const handleClick = (e) => e.target.textContent = "clicked!" // e.target is the element that triggered the event and textContent is the text inside the button
+    return (
+        <button onClick={(e) => handleClick(e)}>click me</button>
+    )
+
+    by accessing the event wer can acces it properties and can manipulate them like changhe text content or hide it or whatever
+
+THERE  ALT OF EVENTS I CAN SERACH FOR THEM
+
+
+
+liftung state up:
+    use to pass data from chiled to parent compoent
+    opsite of props
+
+
+
+
+REACT Hooks:
+    special func that allow func comcponents to use react features
+    without writting class componnets {change made in v16.8}
+    useState, useEffect etc (start with use)
+
+    useState():
+        is react hook that allows the creation of stateful vars 
+        and a setter func to update its value in virtual DOM
+        [name, setName]
+        cause rerender
+        state is like a snapshate of the app at particukler time in it give var this property, so now we can upsate staet of  a var and rerender the virtual DOM
+
+    upadter function:
+        a func that is passed to setState as anargument usualluy
+        1.e i have a setter func for year if i wanna increment my year by one  ican:
+            setYear(year+1) tyhos wporks but better practice will be to pass an arrow func
+
+            setYear(arrowFunc)
+
+
+
+
+    
+    useRef():
+        it does bot re render when its value changes 
+        we use it when we want a component to remember some info 
+        but we don't want that info to triger re render 
+    use:
+        1) acessing/interacting with DOM ele 
+        2) handling focus, animation and transitions
+        3) managing timers and intervals

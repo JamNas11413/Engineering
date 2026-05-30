@@ -1,0 +1,10 @@
+tailwind:
+    a huge colletion of css utility classes
+
+    1st create a react etc project tyhen add tailwind to it
+        follow steps given in the docs
+
+
+
+
+        dox, google, llms 

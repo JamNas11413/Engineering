@@ -1,0 +1,132 @@
+APIs:
+    waiter hhhhhhh
+    interface that client app can use to talk to backend
+    it can ahve endpoints foe certain Data
+    it can be used to perform CRUD operations on data
+    it can be used to perform authentication and authorization
+    it can be used to perform data validation and serialization
+    it can be used to perform data filtering and pagination
+    it can be used to perform data caching and optimization
+
+resful:
+    representational state transfer
+    it defines certain rules that allows clients and server to communicate over IntersectionObserverEntry
+
+concepts:
+    resources
+    representations
+    methods
+
+resources:
+    like an object in AudioParamMap, i,e. products, cart Etc 
+    availibkle on web and client apps can access them using a URL
+
+url:
+    uniform resource locater 
+    basically a web ocater that points to a resource
+    it can be used to perform CRUD operations on data
+
+
+
+now we can identify a resource suing a url the server gonna return in certain formate that cpmes in representation
+
+
+representations:
+    the way a resource is represented when it is sent to the client or received from the client
+    it can be in JSON, XML, HTML, etc
+
+
+    JSON:
+    {
+        "id": 1,
+        "name": "Product 1",
+        "price": 10.99
+    }
+
+
+
+
+methods/http methods:
+    the actions that can be performed on a resource
+    it can be:
+         GET, 
+         POST, 
+         PUT, 
+         DELETE, 
+         patch, -> updating part of data like sunset of properties /prod/1/ -> update price only
+         etc
+
+
+RSET:   
+    representational state transfer ia an architectural design style that provides guidelines for buuilding scalable, 
+    reliable, and effiecient networked systems
+
+        or
+
+    it is a set guidlines or rules.
+
+
+REST API:
+    a rest/restfull api is an api that follows the rest architectural style, allowing systems to communicate and msg 
+    resources using HTTP.
+
+
+Why we need REST:
+    so modern architectural we only send the data from server(usually in JSON) and let the client (both mob/web) decide 
+    how it should be displayed
+
+    instead of sending HTML from the server, we only send the data 
+    the HTTP request is done by rest api
+
+Data:
+    the data is return is json formate 
+        the json only provides data while HTML also provide the structure of the page but we don't need in this architectural 
+        as the page layout is defined frontend tools
+
+
+Core Principle of REST:
+    (1) client AND SERVER ARE INDEPENDANT entities as they have nothing to do with each other like server does not care hove the 
+    data is presented in frontend etc 
+            client handels the interface, server handles the data and logic 
+            communication only occurs through standardized requests and responces.
+
+    (2) Statelessness-each request is self contained, carrying all the information the server needs. The server does not store 
+    client context between requets/don't remember the request-each request is brand new.
+
+    (3) Cacheability-responces must indicates wheter they are cacheable. Proper caching improves performance, reduces load and 
+    enhance network efficiency-by sending fever request to the server.
+        -> data that changes frequently should not be cached like live stock prices etc
+    
+    (4) Layered system - the server can have hierarchial layers(load balncer, cache, security, other intermediaries). the client 
+    interact only with layer it sees, unaware of others, improving scalability and security(the client doesn't needa know where 
+    the rquest goes, i tonly cares about the data recieved).
+
+    (5) Code on demand - optionally server can send excutable code to extend client functionality. this is optional, not requires 
+    for rest and often avoided.
+
+    (6) Uniform Interface - Heart of the REST
+        a) resource identification in URLs - every resource has a unique url/endpoint.
+            i.e: post/ -> all posts 
+                 posts/1/ -> post with id 1
+                
+        b) standard HTTP methods - use HTTp verbs/methods consistently: GET, POST, PUT, PATCH, DELETE.
+
+
+    urls represents resources(nouns), NOT actions(verbs)
+        GET/getAllPosts/  ==> incorrect
+        correct => noun + HTTP method ==> GET/posts/
+
+
+        c) Self-Descriptive Messages - each request and responce contains all needed info.
+
+        d) HATEOAS - HYPERMEDIS AS the engine of applications state - responces can include link to guide the client on next actions
+         in simple the server can include links in the responce, and the user can understand what acrions are possible here  
+
+
+Server-Client communication - so the client send a http request through a url/endpoint based on what action he wanna take, on the serverb 
+defined the endpoints and whenever it hitted the server will perform the specified action and will return the data in responce
+
+
+
+
+how we can create rest apis using django => using django rest framework 

@@ -1,0 +1,167 @@
+
+What's a CLI?
+    You'll often hear the terms "terminal", "shell", "command line", "CLI", and "command prompt" used interchangeably (despite some technical differences) to refer to the same thing: a program that allows you to interact with your computer in a text-based way.
+
+
+
+What's a GUI?
+     you're probably used to interacting with your phone or computer using a graphical user interface (GUI). When you use a mouse to click on fancy icons, buttons, and menus, you're using a GUI.
+
+
+GUIs are limited as oyu are ,imeted only to the button and icon
+while in CLI you can do very beyond stuffs and very fast and u get direct access to lower level of you sys
+
+
+
+
+easyness comes with a price:
+
+
+But GUIs do have some drawbacks:
+
+    They're weak. You are given much more control over your computer through a CLI. With a GUI you're limited to the options that the developer of the GUI has given you.
+    They're slow. Once you know the commands to type, it's much faster to type them than to click through endless menus with a mouse.
+    They're not as reproducible. If you want to share a set of instructions, you can just copy and paste commands without worrying about screen sizes and user preferences.
+    They're not automatable. It's easy to write code that manipulates text (as you've seen in Python), but it's much harder to write code that manipulates GUIs.
+    They're not as cool. You will be invited to 90% fewer romantic outings if you are a GUI user.
+
+
+
+
+What Is a Terminal?
+    As we talked about, the terms "shell", "CLI", and "terminal" are often used to refer to the same thing: a program for issuing text-based commands.
+
+    But, the "terminal" is just one specific part of that program. Historically,
+        the word "terminal" meant a physical device that you could type commands into, 
+            essentially a keyboard and a screen.
+
+    These days, when we say "terminal", we really mean "terminal emulator". 
+        A terminal emulator is a program that emulates a physical terminal. 
+            It's a program that lets you type commands into a window on your computer.
+
+    Which commands you're able to use isn't determined by the terminal emulator, but by the shell.,
+        Your terminal emulator is just responsible for drawing text on the screen and processing your keystrokes.
+
+
+
+
+What Is a Shell?
+    So if your terminal is just a program that lets you issue text-based commands and renders the output of those commands...
+
+...What is the program that runs those commands???
+        That's a shell.
+
+Shells do a lot of things, but their main job is to interpret the commands you type and execute them.
+
+
+REPL
+    Shells are often referred to as "REPL"s. REPL stands for
+        Read
+        Eval (evaluate)
+        Print
+        Loop
+
+
+This is a fancy way of saying that shells are programs that:
+    Read the commands you type
+    Evaluate those commands, usually by running other programs on your computer
+    Print the output of those commands
+    Give you a new prompt to type another command and repeat
+
+
+idk what it means.....hhhhhh
+terminal emulater:
+    expr 123456 + 7890 == 131346
+
+
+
+to check for the shell u are using:
+    echo $SHELL
+# Both Bash and Zsh are shells, and they also happen to be powerful programming languages. They have variables, functions, loops, and more. 
+
+
+vars: 
+
+┌──(jamnas11413㉿JamKali)-[~]
+└─$ echo $SHELL
+/bin/bash
+
+┌──(jamnas11413㉿JamKali)-[~]
+└─$ name="jamal"            ## there are no spaces between the variable name, assignment operator = and value "jamal".
+
+┌──(jamnas11413㉿JamKali)-[~]
+└─$ echo Hello $name            ## Interpolate a Variable in a String
+Hello jamal                 
+
+Starting a line with the $ symbol is a convention to show it's a shell prompt, and it should not be typed. The actual command is echo $name.
+
+
+┌──(jamnas11413㉿JamKali)-[~]
+└─$ echo name
+name
+
+┌──(jamnas11413㉿JamKali)-[~]
+└─$ echo $name
+jamal
+
+$ ==> prefix the variable name to use it 
+
+
+──(jamnas11413㉿JamKali)-[~]
+└─$ bankname="WorldBanc"
+founded="1969"
+ceo="Jeff Gates"
+
+┌──(jamnas11413㉿JamKali)-[~]                                   
+└─$ echo $bankname $founded $ceo                               
+WorldBanc 1969 Jeff Gates
+
+
+sentence:
+
+┌──(jamnas11413㉿JamKali)-[~]
+└─$ echo $bankname was founded in $founded by $ceo
+WorldBanc was founded in 1969 by Jeff Gates
+
+
+
+to see you cammond history:
+
+
+    ┌──(jamnas11413㉿JamKali)-[~]
+└─$ history
+
+    echo $SHELL
+    name="jamal"
+    echo Hello $name
+    echo name
+    echo $name
+    bankname="WorldBanc"
+    founded="1969"
+    ceo="Jeff Gates"
+    ech $bankname $founded $ceo
+    ech $bankname
+    echo $bankname $founded $ceo
+    echo $bankname was founded in $founded by $ceo
+    history
+
+
+
+Arrow Keys
+    You can use the up and down arrows to quickly cycle through your command history.
+
+The UParrow goes back in your history, and the DOWN arrow goes forward.
+
+
+Clear
+    If your terminal is feeling cluttered with text, you can clear it with the clear command, or by pressing ctrl + l.
+    
+    This won't delete your history, it will just clear the screen.
+
+
+there are some other alternative to the built-in os terminal like iDE/text editer built in terminal(loike vs code's one) they also provide certain more features like if i open terminal in vs code it will already in my project foleder so i dont have to navigate to it.
+other examples are gostty, window terminal {they all are terminal emiulater}
+
+
+
+

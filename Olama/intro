@@ -1,0 +1,25 @@
+OLAMA:
+    an opensiource tool that is design to simplyfy the process of running llm locally(on your own hardware)
+    it uses cli
+
+
+problem it solves:
+    rag
+        we have docs
+            we deivide into chunks
+                embedding llm   --> vector representation of the chunks
+                    the embedded store somewhere and then a query come in goes through the same process of embedding 
+
+                    now we have the embedding which is used to query to similer search internally in a factor DB 
+                    we passed to gen ai anfd get a responce
+    we have full constrol of the model -> customize / flexibility / fine tuning (to meet specific needs)
+    we have privacy
+    speed
+    etc etc
+
+
+
+
+
+
+

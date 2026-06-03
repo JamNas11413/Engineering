@@ -1,0 +1,404 @@
+Retrieval Augmented Generation:
+    "Retrieval Augmented Generation"... or "RAG" for short. 
+    Applications need search, and in the age of AI, search has become a lot better, 
+    but also a bit more complex
+
+
+RAG and CONTEXT ENGINEERING is the next step in search after semantic search.
+
+What Is Search?
+    Filtering data and finding info that match certain conditions.
+
+    Search is a non-negotiable feature of nearly all content-based web applications. In this course, we'll learn a bit about how it works, but more specifically:
+         we'll focus on how to use AI and LLMs and search features together for an even better user experience. There is so much more to a good search experience than exact keyword matches. We want to be able to:
+            Find relevant results even if the search terms don't match exactly
+            Match based on semantic meaning, not just keywords
+            Understand user intent and context
+            Provide succinct results that go beyond the raw data
+
+
+To do so, we'll be learning about RAG, or "Retrieval Augmented Generation." And "retrieval" is the first component in RAG:
+
+    R: Retrieve(find or extract (information stored in a computer).) information via a search algorithm
+    A: Augment(make (something) greater by adding to it; increase.) our instructions with the search results
+    G: Generate better, richer, and more accurate information using LLMs
+
+https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/DZl22fo-1280x323.jpeg
+
+
+
+
+Keyword Search:
+    Before we get deep into the advanced techniques of RAG, let's start with more "basic" search. That way we can understand the benefits of the features we'll be building on top of. 
+    
+    Keyword search is exactly what it sounds like: we check if the user-supplied search terms exist in the content in our dataset, and return any results that match.
+
+    Almost every (even RAG) search implementation uses keyword search as a foundational component. It's fast, simple, and effective for many use cases.
+
+The more technical and precise the terminology in the domain is, the more powerful keyword search is! For example:
+
+Medical Search – Precision(the quality, condition, or fact of being exact and accurate.) Desired
+    Query: "COVID-19"
+    Keyword search: ✅ Finds documents specifically about COVID-19
+    Semantic-only search: ❌ Finds less-related content about "respiratory viruses" or "pandemic diseases"
+
+
+Movie Search – Generalization Desired
+    Query: "Alien movie"
+    Keyword search: ❗Only finds "Alien"
+    Semantic-only search: ✅ Finds similar movies like "Invaders from Mars", "E.T.", or "Alien"
+
+
+
+Text Processing
+    Exact match(in kw search), is not particularly useful. It's quite rare that a user searching for "The Alien" wants us to exclude results like:
+        "the alien" (different case)
+        "Alien" (missing "The")
+        "Aliens" (plural form)
+
+Keyword search doesn't need to be exact, in fact, it shouldn't be. To improve keyword search we're going to need to do some text processing. 
+    For example, we want bear and Bear and bear. to all be identified as the same keyword. So, we're going to do a few things.
+
+
+Text Processing Pipeline:
+    https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/QpkclET-620x720.png
+
+    img above:
+
+
+    Case insensitivity: Convert all text to lowercase
+        "The Matrix" becomes "the matrix"
+        "HE IS HERE" becomes "he is here"
+
+    Remove punctuation: We don't care about periods, commas, etc
+        "Hello, world!" becomes "hello world"
+        "sci-fi" becomes "scifi"
+
+    Tokenization: Break text into individual words
+        "the matrix" becomes ["the", "matrix"]
+        "hello world" becomes ["hello", "world"]
+
+    Stop words: Remove common stop words that don't add much meaning
+        ["the", "matrix"] becomes ["matrix"]
+        ["a", "puppy"] becomes ["puppy"]
+
+    Stemming: Keep only the stem of words
+        ["running", "jumping"] becomes ["run", "jump"]
+        ["watching", "windmills"] becomes ["watch", "windmill"]
+
+
+
+Punctuation:
+    We're going to keep it really simple for now by removing all punctuation from the text in our dataset.
+
+Examples:
+    Boots the bear! -> Boots the bear
+    The wonderful bear, Boots -> The wonderful bear Boots
+
+
+Tokenization
+    Tokenization means splitting text into smaller pieces, called tokens. Simple word-based tokenization looks like this:
+
+    Input: "The Matrix is a great movie!"
+    Output: ["the", "matrix", "is", "a", "great", "movie"]
+
+Many tokenization methods exist.
+
+
+https://en.wikipedia.org/wiki/Search_engine_indexing#Tokenization
+
+
+What are tokens?
+    Tokens are the building blocks of text that OpenAI models process. They can be as short as a single character or as long as a full word, depending on the language and context. Spaces, punctuation, and partial words all contribute to token counts. This is how the API internally segments your text before generating a response.
+
+Helpful rules of thumb for English:
+
+    1 token ≈ 4 characters
+
+    1 token ≈ ¾ of a word
+
+    100 tokens ≈ 75 words
+
+    1–2 sentences ≈ 30 tokens
+
+    1 paragraph ≈ 100 tokens
+
+    ~1,500 words ≈ 2,048 tokens
+
+Tokenization can vary by language. For example, “Cómo estás” (Spanish for “How are you”) contains 5 tokens for 10 characters. Non-English text often produces a higher token-to-character ratio, which can affect costs and limits.
+
+Examples
+    Here are some real-world text samples with their approximate token counts:
+
+        Wayne Gretzky’s quote “You miss 100% of the shots you don’t take” = 11 tokens
+
+        The OpenAI Charter = 476 tokens
+
+        The US Declaration of Independence = 1,695 tokens
+
+
+
+Stop Words:
+    Now that we have a list of tokens, we need to decide which ones are actually useful for search. Not all tokens are created equal...
+
+Examples of High-Value Tokens
+    bear
+    panda
+    london
+    protector
+
+Examples of Low-Value Tokens
+
+    a
+    the
+    is
+    of
+    in
+
+These are examples of stop words, which is a term for "words that don't have much semantic meaning". In short, we're going to remove them.
+
+
+Why Remove Stop Words?
+    Our goal is to match words from the user's input to the words in our dataset. But if we don't remove stop words, we can get some pretty misleading results, here's an example:
+
+User query: "the bear"
+
+Results:
+
+    "Jungle Bear": matches "bear".
+    "The Terminator": matches "the".
+
+Oof! Both documents match, but "Jungle Bear" is clearly more relevant! "the Terminator" only matches on a meaningless stop word.
+
+
+
+Stopword List
+
+a
+about
+above
+after
+again
+against
+ain
+all
+am
+an
+and
+any
+are
+aren
+aren't
+as
+at
+be
+because
+been
+before
+being
+below
+between
+both
+but
+by
+can
+couldn
+couldn't
+d
+did
+didn
+didn't
+do
+does
+doesn
+doesn't
+doing
+don
+don't
+down
+during
+each
+few
+for
+from
+further
+had
+hadn
+hadn't
+has
+hasn
+hasn't
+have
+haven
+haven't
+having
+he
+he'd
+he'll
+he's
+her
+here
+hers
+herself
+him
+himself
+his
+how
+i
+i'd
+i'll
+i'm
+i've
+if
+in
+into
+is
+isn
+isn't
+it
+it'd
+it'll
+it's
+its
+itself
+just
+ll
+m
+ma
+me
+mightn
+mightn't
+more
+most
+mustn
+mustn't
+my
+myself
+needn
+needn't
+no
+nor
+not
+now
+o
+of
+off
+on
+once
+only
+or
+other
+our
+ours
+ourselves
+out
+over
+own
+re
+s
+same
+shan
+shan't
+she
+she'd
+she'll
+she's
+should
+should've
+shouldn
+shouldn't
+so
+some
+such
+t
+than
+that
+that'll
+the
+their
+theirs
+them
+themselves
+then
+there
+these
+they
+they'd
+they'll
+they're
+they've
+this
+those
+through
+to
+too
+under
+until
+up
+ve
+very
+was
+wasn
+wasn't
+we
+we'd
+we'll
+we're
+we've
+were
+weren
+weren't
+what
+when
+where
+which
+while
+who
+whom
+why
+will
+with
+won
+won't
+wouldn
+wouldn't
+y
+you
+you'd
+you'll
+you're
+you've
+your
+yours
+yourself
+yourselves
+
+
+
+
+Stemming:
+    Now that we have a list of tokens, we need to reduce them to their root form. This helps match different variations of the same word.
+Examples of Word Variations
+
+Stemming Examples:
+    running, runs, ran → run
+    jumping, jumps, jumped → jump
+    watching, watches, watched → watch
+
+
+    https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/X2Xj8c4-777x682.png
+
+    These variations are reduced to their stem, which is the base form of a word. This process is called stemming.
+
+
+
+Why Stem Words?
+    Our goal is to match words from the user's input to the words in our dataset. But if we don't stem words, we can fail to retrieve some valid results. Here's an example:
+
+User query: "running"
+    A River Runs Through It: Not returned – no exact match for "running"
+    Run Baby Run: Not returned – no exact match for "running"
+
+Ugh! Both contain the concept, but in different forms that don't quite match the query.
+
+

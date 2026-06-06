@@ -1,0 +1,43 @@
+
+5 steps of hacking:
+    reconisons
+        info gathering 
+            2 types:
+                active: scanning the victem etc
+                pASSIVE: gathering data from public availible
+                    target validation
+                    finding sub domains
+                    fingerprinting 
+                    data breaches
+                        of the target if any
+                    
+
+        goals:
+            possible attack vectors
+            vulnerabilities 
+
+    scanning
+        active: port scanning, vulnerability scanning, etc  
+        passive: OSINT, social media, etc
+
+    gaining access
+        exploiting vulnerabilities, social engineering, etc
+
+    maintaining access
+        backdoors, rootkits, etc
+        covering tracks
+        deleting logs, etc   
+
+    analysis and reporting
+        analyzing the attack, identifying weaknesses, and reporting findings to stakeholders    
+
+
+
+
+
+task1:
+    irobot.com
+        reconisons  
+            1 target validation: irobot.com is a company that designs and builds robots for various applications, including home cleaning, security, and industrial use.
+            2 finding sub domains:  
+            

@@ -1,2 +1,448 @@
+RSET:   
+    representational state transfer ia an architectural design style that provides guidelines for buuilding scalable, 
+    reliable, and effiecient networked systems
+
+        or
+
+    it is a set guidlines or rules.
+
+
+REST API:
+    a rest/restfull api is an api that follows the rest architectural style, allowing systems to communicate and msg 
+    resources using HTTP.
+
+
+Why we need REST:
+    so modern architectural we only send the data from server(usually in JSON) and let the client (both mob/web) decide 
+    how it should be displayed
+
+    instead of sending HTML from the server, we only send the data 
+    the HTTP request is done by rest api
+
+Data:-> resources
+    the data is return is json formate (resource representation)
+        the json only provides data while HTML also provide the structure of the page but we don't need in this architectural 
+        as the page layout is defined frontend tools
+
+        the for mate of the resource on serer is different from the formate the srver returns to client, so the client must ask for the formate it want the data in
+
+URL:
+    uniform resource locater is a way to locate a resource on the web
+
+JSON:
+    javascript object notation is a way/notation for representing data/obj
+        the key should be unique and enclosed on double quotes as strings single quote atre not allowed in json 
+        value str should also be enclosed in double quotes
+        values can be of any datatype
+
+
+Core Principle of REST:
+    (1) client AND SERVER ARE INDEPENDANT entities as they have nothing to do with each other like server does not care hove the 
+    data is presented in frontend etc 
+            client handels the interface, server handles the data and logic 
+            communication only occurs through standardized requests and responces.
+
+    (2) Statelessness-each request is self contained, carrying all the information the server needs. The server does not store 
+    client context between requets/don't remember the request-each request is brand new.
+
+    (3) Cacheability-responces must indicates wheter they are cacheable. Proper caching improves performance, reduces load and 
+    enhance network efficiency-by sending fever request to the server.
+        -> data that changes frequently should not be cached like live stock prices etc
+    
+    (4) Layered system - the server can have hierarchial layers(load balncer, cache, security, other intermediaries). the client 
+    interact only with layer it sees, unaware of others, improving scalability and security(the client doesn't needa know where 
+    the rquest goes, i tonly cares about the data recieved).
+
+    (5) Code on demand - optionally server can send excutable code to extend client functionality. this is optional, not requires 
+    for rest and often avoided.
+
+    (6) Uniform Interface - Heart of the REST
+        a) resource identification in URLs - every resource has a unique url/endpoint.
+            i.e: post/ -> all posts 
+                 posts/1/ -> post with id 1
+                
+        b) standard HTTP methods - use HTTp verbs/methods consistently: GET, POST, PUT, PATCH, DELETE.
+
+
+    urls represents resources(nouns), NOT actions(verbs)
+        GET/getAllPosts/  ==> incorrect
+        correct => noun + HTTP method ==> GET/posts/
+
+
+        c) Self-Descriptive Messages - each request and responce contains all needed info.
+
+        d) HATEOAS - HYPERMEDIS AS the engine of applications state - responces can include link to guide the client on next actions
+         in simple the server can include links in the responce, and the user can understand what acrions are possible here  
+
+
+Server-Client communication - so the client send a http request through a url/endpoint based on what action he wanna take, on the serverb 
+defined the endpoints and whenever it hitted the server will perform the specified action and will return the data in responce
+
+
+
+
+
+how we can create rest apis using django => using django rest framework 
+
 Django Rest Framework:
+    a toolkit built on top of Django that helps us build REST APIs in a structured and efficient way
+
+     it is an extension of Django 
+     uses django models, orm, views
+     designed for rest api development
+
+     
+
+Serializers:
+    are responsible for converting complex data into python native data types that can be then rendered JSON, 
+    XML or other content Types.
+
+    COMPLEX DATA - QUERYSETS[multiple rows(collection of rows)] or  MODEL OBJECTS[single row IN a db table]
+    NATIVE PYTHON DATATYPES - all datatypes like dict[key:value], str, int, bool etc
+
+        when we convert a queryset/model obj into python native Datatypes it is mostly converted into dictionary 
+        the data inside the dictionary is also converted into python datatypes like str, int, lists and so on
+
+    the process of converting complex data into python premitive dattypes are called Serialization 
+
+    complex data -------serialization------> {'str': 67367} -----converted/rendering ----> JSON/XML or etc
+            the rendering is not part of serialization in DRF  
+
+
+    we create erializers as python class 
+    thare are different types of serializers availible, main types are:
+        serializer class 
+        ModelSerializer class
+        HyperLinkModelSerializer class
+
+
+read docs
+
+
+SERIALIZATION PROCESS: steps:
+    1) fetch obj or queryset from db
+        using django orm
+            i.e book.objects.all()
+    2) create serializer instance 
+        pass the object or queryset
+            use many=True if queryset
+    3) serializers converts model instance(s) to python native types
+        we can acces this converted data using serializer.data property 
+
+
+
+        serilaizer --->  converts model ---> python data
+
+        we write the above logic in views.py as it is part of our app logic
+
+
+
+sending the data to the client, for that we will do rendering:
+
+RENDERING:
+    SENDING THE serialized python dict to client 
+
+    JSONRenderer:
+        convert python responce data into JSON 
+
+        syntax:
+            from rest_framework.renderer import JSONRenderer
+            json_data = JSONRenderer().render({'id': 1,...})   {'id': 1,...} -->    python data/serializer.data
+
+
+DE-SERIALIZATION:
+    OPPOSITE of serialization
+    serializers also provide deserialization.
+
+    deserialization is the process od converting parsed data(JSON data converted into python native datatypes) into 
+    complex data, after validation.
+
+    we need it b\c the frontend sends data in JSON formate while we store data in DB in complex data so we needa convert it to it
+
+    two parts:
+
+        PARSING:
+            parsing means converting raw request data send  by user into python native data types
+            we do this via JSONParser it parses  the stream into python data
+                (DRF handles parsing for us)
+
+        De-serialization:
+            1) define create() / update() methods onm the serializer  # we do it for more control but there is also types serializer in which djano gonna everything for us
+            2) pass incomming data to the serializer obj
+            3) validate the data, 
+                VALIADTION IS PERFORMED BY CALLING IS_VALID() FUNC --> return boolean 
+                    this checks:
+                        field-level validation
+                        ciustom validation ligic 
+                    returns a 400 responce if the data was invalid 
+            4) call the save() method to create data in DB
+                    after validation .save() is called 
+                        save() intarnally uses:
+                            validated data
+                            calss create() or update() 
+                        
+                        we never calls the create() or update() directly()
+
+@csrf_exempt
+def list_object_view(request):
+    if request.method == "POST":
+       json = request.body
+       # we needa cponvert the above data into a stream
+       stream = io.BytesIO(json)
+       parsed_data = JSONParser().parse(stream)
+    #    print(parsed_data) # we are gettng an error syays csrf token required, so we needa import it and apply the deccorater on this func
+    #    print(type(parsed_data)) # dictionary 
+       serializer = PersonSerializer(data=parsed_data)
+    data = Person.objects.all() 
+    serializer = PersonSerializer(data, many=True)  # this will serialize the data and many=True is used to serialize multiple objects
+    # each dictionary will represent an object
+    # print(serializer.data) 
+    json_data = JSONRenderer().render(serializer.data)
+    return HttpResponse(json_data, 
+                        content_type='application/json')
+
+OKAY SO WE PASS THE SER    serializer = PersonSerializer() TO BOTH SERIALIZATION AND DESERIALIZATION 
+    THEN HOW IT KNOW WHETER IT SHOULD BE SERIALIZED ORDESERIALIZED AND ANSWER TO IT IS THAT:
+    THE PRESENCE OF data= TELLS drf TO DESERIALIZE THE DATA
+
+    data= ACTS AS A SWITHCH PRESENT --> DESERIALIZE : ABSENT --> SERIALIZATION
+        DATA IS PASSED IN DESERIALIZATION USING THE data= ARGUMENT
+
+
+ModelSerializer:
+    DRF serializer that provides a shortcut to automatically create a serializer with fields that match 
+    a django model's fields
+
+    we should use it while dealing with database
+
+    we only needa show which fields we wanna serialize 
+    use django models validation automatically 
+    include default implementation of create() and update() methods
+    reduces the amount of code to write
+
+WHEN OUR REST API IS NOT REALLY DEPENDANT ON DATABASE BUT YOU STILL NEEDA SERIALIZE THE DATA TO PERFORM SOME ACTION I.E SENDING AN EMIAL AFTER RECIEVING DTAA FROM THE CLIENT AN DSERIALIZING THE DATA
+    WHEN WE WNAT MORE CONTROL ON TH EPRICES AND WNNA HANDLE EVRY STE WE USE BASE SERIALIZER CLASS 
+
+AND IF THE API IS HEAVILY DEPENDANT ON THE DB WE WILL USE ModelSerializer
+    AS IT MAKE THE INTERACTION WITH THE DTABSE EASIER AND SAVES ALOTS OF TIME 
+
+
+    SYNTAX (kinda):
+        class PersonSerializer(serializers.ModelSerializer):
+            class Meta:
+                model = Account 
+                fileds = ['name', 'city', 'age']  # list or '__all__' -> will hve all the fileds  # the list of the fields name should be the sam eas we definnded in the model class
+                exclude = ['users']   # we use it when we wnna serilaize alll the field from the odel class except some filed we specify trhat via the exclude attr 
+
+             ##  ModelSerializer, you must deefinr either fields or exclude, but ypu can't use both simultaniously.
+                OTHERAISE IT WILL RAISE AN ASSERTION ERROR    
+
+
+so far we have been using django core views for our api 
+    but DRF also provides its own way of writtingh api views
+
+just like Django, in DRF we also have function based views and class based views 
+
+FUNCTION BASED API VIEWS(DRF):
+    in it we use a decorater called @api_view   => it convert a normal django function based view to a drf function based api view
+        the decarater also takes  a list of the http methods that the view should responced to
+        return 405 if the method is not allow 
+
+REQUEST:
+    rest frameworkrequest class extends the standard HttpRequest. DRF's req object automatically parse JSON  and 
+    other data fromate so they can be handled just like regular from data. 
+
+    we acces the parsed data by .data attr on rquest obj
+
+    some params:
+        request.data:
+            it includes all arsed content including file or non file imput unlike the core django in which we do rquest.file
+            it supports parsing request bodies beyound just POST, including PUT and PATCH etc
+            it supports rest framework flexible request parsing , including JSON, not justform data
+
+            request.query_params:
+                is a clearer synonym for the request.get, recomended because any HTTp method can include query parameters 
+                not just GET
+
+
+RESPONCE:
+    we use it for two funcs:
+        rendering
+            in DRF the responce class is responcible for converting python native datatypes into a renderred formate like JSON or XML using the appropreate renderer before sending it to the client 
+
+        content negotciation:
+            it decide how the responce data should formatted based on what the client requests 
+            sending the responce in the formate thatthe clients is requested not laways JSON 
+            rest architecture supports many kind of formates and if we want our rest apiu to support multiple formate we can do that via content negociateion 
+
+
+Content Negotiation:    
+    sending the responce in the formate thatthe clients is requested
+
+    the implentaion can be vary across different frameworks 
+
+    working in DRF:
+        the client sended a req and also in a sub header it sends the formate of the data it will recieve (i.e acept: application/json)
+        the server will look for the formate if it is avilible in renderers 
+        if exists then it selects it 
+        and view is excuted(respponce())
+        it negociate content once more 
+        and finalize the renderer
+        and sends trhe responce to the client in the selected fromate if availible if not, If the client requests a format that your backend does not support, DRF will not fall back to another format. Instead, it will immediately reject the request and return an HTTP 406 Not Acceptable error.
+
+         print(request.accepted_renderer)  # this will print the accepted renderer for the request which is the renderer that will be used to render the response data and it is determined by the content negotiation process of DRF based on the Accept header of the request and also based on the available renderers in the settings.py file of the project
+
+         we have two default renderer json(will be 1st option as rest apis should return json by default ) and browsable api (html) 
+            we can also change settings to add more renderer to the app   {for how do a quick search}
+
+WE CAN also passed an argument to the is_valid() method to do the same job more efficiently:
+    views.py belove 150
+
+
+when we use the api views instead of core django views the DRF gives us the browsible api interface 
+    so we can text our apis etc
+
+
+
+
+TILL NOW WE WRE USING FUNCTION BASED API VIEWS 
+    NOW WE WILL DIVE INTO CLASS BASED VIEWS 
+
+
+advance concepts:
+
+
+{
+    the default convention in python is that we usesnake case for function/var naming and cascal case for class names 
+}
+
+CLASS BASED VIEWS:
+
+    APIView:
+        APIView subclasses Django View class
+            handler methods recieve REST frameworkRequest instead of HttpRequest
+            handlers return Responce: the view handle negotiation and rendering 
+            Any API exception will be cought and mediated into appropriate responces 
+        In APIView, each HTTP method has its own handler, and requests are dispatched to thr matching method (eg get(), post() etc )
+
+        undefined HTTP methods automatically return 405 method not allowed error 
+
+
+
+Generic API views:
+    help us write much less code for crud base api views
+    it extends APIView and add common features needed for stansard list  and detail views 
+
+    attributes:
+        queryset - used to return object from this view
+
+        serializer_class - The serializer class that should be used for validating and deserializing input, 
+            and for serializing output. 
+
+        etc etc
+
+        docs
+
+    it does not provide CRUD logic by default, we still need handler functions like .get() etc
+
+    to reduce even more code we can use mixins
+        we can't use mixins directly with APIView b/c mixins depends on attributes and methods provided by genric api view
+            means generic api views act as a bse class for mixins
+
+
+MIXIONS:
+    mixin classes provide actions that defines basic view behaviour 
+    they give action methods instead of direct handlers like .get() etc , whichallow more flexible and reusable behaviour
+
+    some mixins:
+        CreateModelMixin - create() -> returns a newly ctreated obj
+        listModelMixin - list() -> return a list of obj
+        RetriveModelMixin - retrieve() -> return a single obj
+        UpdateModelMixin - update() / partial_update() -> returns an updated obj
+        DestroyModelMixin - destroy() delete an obj and return  no content
+
+
+
+
+    WE CAN till now manually connecting the mxins with http methods but it is alreaddy done for us we just needa use it i.E
+
+    def get(self, request, *args, **kwargs): 
+            return self.list(request, *args, **kwargs) 
+    def post(self, request):
+        return self.create(request)  
+
+        so we don't needa define thse handlers fun as theya re already included
+            these classes are clalled concreate view function
+
+concreate view function:
+    docs  -> https://www.django-rest-framework.org/api-guide/generic-views/#concrete-view-classes
+
+
+ViewSets:
+    we can have logic for multiople view inside a single class that's why it is called view set 
+    just move the repeating stuff in both or kore classes into this one 
+
+we use router toreate routes for th viewsets 
+
+Routers:
+    import the defaultrouter/simplerouter class in urls.py
+
+    whe we use viewsets we not gonoo explicitly register the url patterns instead we use a router
+    so we register our viewset wityh a router and it ill take  care of genearting the url patterns
+
+    docs
+
+        nested routers:
+            proj on github: drf-nested-routers
+            we can also see the instruction how to use the library
+
+
+
+
+we can also do sorting and filtering , sdrching etc etc => docs
+
+
+Pagination:
+    how many item we want in one page 
+
+
+    in setting sam .py
+
+
+
+
+{
+    building an model:    
+        1) craete a model 
+            b) create migrations
+            c) apply the migration
+
+
+    building an API
+        1) make a serializer
+        2) create a view 
+        3) register a route (if we are using a viewset then router otherwise expliciteky each route)
+}
+
+building an API
+
+    steps:
+        1) design the API 
+            identifying endpoints and operation on them
+        2) make the model to meet the rquirements of the api 
+        3) make a serializer
+            
+        4) create a view 
+        5) register a route
+
+
+
+
+
+if we want the id to be not shown in the url as it can be hacked wecan use UUID fieldtype for the id field
+i.E 
+    id = model.uuidfield(default=uui4)
+    it will encode the id into 30 chars
+
+AUTHENTICATION:
     

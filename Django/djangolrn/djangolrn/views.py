@@ -21,6 +21,7 @@ def homepage(request):
     return render(request, "home.html") 
 
 def about(req):
+    # req.user  # the rquest has an attribute and it is rhe job of the uthentication middleware 
     return render(req, "about.html", {'name': 'jamal'}) # dynamic value as dictionary 
 
 def contact(req):

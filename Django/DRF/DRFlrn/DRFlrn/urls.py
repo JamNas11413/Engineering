@@ -1,5 +1,5 @@
 """
-URL configuration for djangolrn project.
+URL configuration for DRFlrn project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -16,21 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views         # {. means from the folder we are in }
-from debug_toolbar.toolbar import debug_toolbar_urls
-
-# admin.site.site_header = "djangolrn administration"
-# admin.site.index_title = "Admin"
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.homepage),
-    path("about/", views.about),
-    path("contact/", views.contact),
-    path('djangoApp/', include('djangoApp.urls')),
-    path('users/', include('users_app.urls')),
-    path("fuck/", include("fuck.urls")),   # anu urls startibg with this should be farworder to the app
-] + debug_toolbar_urls()  # always end a rout with a forward slash
-
-
+    path('api/', include('api.urls')),
+]

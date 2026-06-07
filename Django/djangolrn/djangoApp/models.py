@@ -49,7 +49,7 @@ class Products(models.Model):
     
     
 class Customers(models.Model):
-    fisrt_name = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField( unique=True)
     phone = models.CharField(max_length=255)
@@ -57,10 +57,10 @@ class Customers(models.Model):
     membership = models.CharField(max_length=1, choices=MEMBERSHIP, default=MEMBERSHIP_BRONZ)
 
     def __str__(self):
-        return self.title
+        return f'{self.first_name} {self.last_name}'
     
     class Meta:
-        ordering = ['title']
+        ordering = ['first_name']
 
 # one to one reationship between customer and address
 class Address(models.Model):
@@ -81,10 +81,10 @@ class Orders(models.Model):
     unit_order = models.DecimalField(max_digits=10, decimal_places=2)  # price an be changed, every time on ordering we will set the price
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.customer.first_name} {self.customer.last_name}'
     
     class Meta:    # for setting the default order
-            ordering = ['first_name','last_name']
+            ordering = ['order_date']
             
 # many to many relationship between order and product
 class OrderItem(models.Model):

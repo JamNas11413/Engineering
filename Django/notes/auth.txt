@@ -1,0 +1,3 @@
+every django app comes with full featured and flexiible auth system
+    
+            

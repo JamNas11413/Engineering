@@ -1,0 +1,131 @@
+Docker: -> devops tool
+    a virtualization software that makes developing an deploying apps much easier by packaging the application into a container
+    with all the neccessary dependancies(i.e npm, djangfo etc), configurations, system tools, and runtime 
+    the package can then be easily shared and it is more portable and distributed
+
+
+what problem Docker solves:
+    while developing an application before containers the developeers would have to install all the services their application
+    depnds on or need directly on their os on their machine 
+
+    but with container we do not have to install all the services direcctly on our sysytem 
+    with containers we package verything we need toa a container
+
+    and solves many other problems
+
+    environment reproducibility: every one gets tye same copy and exact setup
+    dependancy management: no langs hell, os specific issues etc
+    portability: run your container on any machine with docker(dev laptop, server or cloud )
+    version control for environment: docker file are text = versionable in git
+
+
+
+computing devices components:
+    computing devices = servers, laptop, phones etc
+    they will have a number of components:
+        CPU -> processing -> heart of the machine
+        RAM -> used to run application and hold the data during processing
+        HDD and SSD -> used for persisitant storage 
+        network interface card -> connect the computing divices to outside world. can be wirless (wifi) or weired (uses ethernet or LAN cables)
+        graphic central processing unit(GCPUs) or graphic cards -> used to accelerate vidio operations 9gaming rendering can bwe built in or a card
+
+
+WHAT IS  A SERVER:
+    a laptop can be a server but it isn't that powerfu;l to server hundreds and thousands of users 
+    so we need a deidicated powerfull and evry time AVILIBLE  computer :
+        that whre we use physical servers   
+            server components are similer as to anyu other compute devices but they are high and more powerfull
+
+     A serveris basically aa powerfull computig device with:
+        a good size of memory RAM
+        one or more CPUs
+        one or more disk drives to persiistantly store data like OS, APP(s)
+        oneor more network interfaces
+        one or more GCPUs
+        an OS (linux etc)
+
+
+        WE CAN INSTALL ONE OR MORE APPLICATINS ON A SERVER
+
+    
+server scaling  
+    as the number of users increases:
+        the severperofrmance might degrade
+        we need to increase (scale) the number of servers { if iot is c,oud we could have auto scaling option}
+
+
+    SERER HOSTING IN DTATCENTERS:
+        a datacenter is an air conditioned, secured, and monitiored space 
+
+
+SERVER RESOURCE OPTIMIZATION AND MULTIPLE APP ON A SERVER:
+    TO OPTIMIZE USAGE, MULTIPLE APPLICATIONS COULD BE RUN ON THE SAME PHYSICAL SERVER:
+        EACH APPLICATION MAY REQUIRES THEIR OWM RUNTIME VERSION, DEPENDANCIES, DATABASE etc
+
+
+        drawbacks:
+            resources contention and in efficiency
+            dependancy conflicts 
+            lack of isolation - security risk
+            scalling is painful
+            deployment and mantanance hell
+            lack pof portability
+
+
+virtualization(cont.):
+    IT INTRODUCES isolation, flexibility and poeratbility etc
+    we can split the same physical,server into multiple virtual machines 
+
+    the hyperviser will feel each of the VM that they have all the requireed hardware etc
+    virtualization.jpeg
+
+    virtualization enbles us to run more than one app, os , etc  on asinge server 
+        they solve sall the problems that will be without it 
+            i.e:
+                VM are isolated
+                we can take a snapshot of the VM for backups    
+                    a VM is a set of files 
+
+
+    VIRTUAL MACHIENE (vm) RESOURCES:
+        THE HYPERVISER SHARE THE PHYSICAL RESOURCE SAMONG THE THE VMs
+        the hyperviser will provide a VCPU, vGcpu, Vnet cards etc
+            they will be virtual as it is an allocation of the real CPU on the physical server
+
+
+            each VM get its:
+                vNIC
+                vDisk
+                vRAM
+                VCPU
+
+                vm.jpeg
+
+popular hyperviser providers:
+    VMware 
+    XEn
+    etc etc
+
+
+As VMs are better than the physical but they have some issues
+    heavyweight, slow to start -> EACH ONE of them have a full OS, app dpendancies etc etc -. so they are slow gto start
+    limited scalibility -> the server hardware have limitations
+    Poor Dev/test/prod parity 
+    os overhead
+    low portability 
+    etc 
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    

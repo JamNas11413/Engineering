@@ -937,3 +937,58 @@
             # order1>oredr2if price of order1>price of order2
 
 
+
+
+
+# Paradigms like object-oriented programming and functional programming are all about making code easier to work with. 
+# After all, programmers are just feeble humans. Code that's easy for humans to understand is called "clean code".
+# Clean Code Does
+
+#     Make code easier to work with
+#     Make it easier to find and fix bugs
+#     Make the development process faster
+#     Help us retain our sanity
+
+
+
+
+
+# DRY Code
+
+# Another "rule of thumb" for writing maintainable code is "Don't Repeat Yourself" (DRY). It means that, when possible, you should avoid writing the same code in multiple places. Repeating code can be bad because:
+
+#     If you need to change it, you have to change it in multiple places
+#     If you forget to change it in one place, you'll have a bug
+#     It's more work to write it over and over again
+
+
+
+# Classes
+
+# A class is a special type in an object-oriented programming language like Python. If you squint really hard, it's kinda like a dictionary in that it usually stores name-value pairs:
+
+# # Defines a new class called "Soldier"
+# # with three properties: health, armor, damage
+# class Soldier:
+#     health = 5
+#     armor = 3
+#     damage = 2
+
+# Just like a string, integer or float, a class is a type, but instead of being a built-in type, classes are custom types that you define.
+# Objects
+
+# So if a class is a new custom type, what's an object? Objects are just instances of a class.
+
+# METHOD
+# Another thing that makes classes useful is that they can have methods! A method is just a function that's tied directly to a class and has access to its properties. 
+# See the take_damage method here:
+
+
+# Self
+
+# Methods are defined within the class declaration. Their first parameter is always the instance of the class that the method is being called on. By convention, it's called "self", 
+# and because self is a reference to the object, you can use it to read and update the properties of the object.
+
+# Notice that methods are called directly on an object instance using the dot operator:
+
+# my_object.my_method()

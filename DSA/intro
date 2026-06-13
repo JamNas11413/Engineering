@@ -1,8 +1,11 @@
+Welcome to Data Structures and Algorithms:
 
 GOALS:
-    1).    Learn to think algorithmically. Break problems down into easier-to-solve parts.
-    2).   Learn to think about how to organize data for more efficient access. Break problems down into data models that make sense.
-    3).    Learn and practice performance optimization. Make your code run faster and more efficiently, even with more data.
+    1).   Learn to think algorithmically. Break problems down into easier-to-solve parts.
+    2).   Learn to think about how to organize data for more efficient access. 
+              Break problems down into data models that make sense.
+    3).    Learn and practice performance optimization. Make your code run faster and more 
+              efficiently, even with more data.
 
 
 What Is a Data Structure?
@@ -28,19 +31,23 @@ Don't worry about memorizing this stuff. In particular, don't worry about memori
 My philosophy is that, 
         "it's mostly a waste of time to memorize anything that's a Google search away".
 
+
+    Instead, focus on understanding how DSA works at the moment. You should understand what your code is doing and why - but that doesn't mean you need to memorize the code itself.
+
+Good luck.
+
 }"
 
 
 
 What Is an Algorithm?
+    In the context of computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions. In short, an algorithm is:
 
-In the context of computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions. In short, an algorithm is:
+        Defined: there is a specific sequence of steps that performs a task  {finite steps}
 
-    Defined: there is a specific sequence of steps that performs a task
+        Unambiguous: there is a "correct" and "incorrect" interpretation of the steps{can be either true or false with noting in b\w}
 
-    Unambiguous: there is a "correct" and "incorrect" interpretation of the steps{can be either true or false with noting in b\w}
-
-    Implementable: it can be executed using software and hardware
+        Implementable: it can be executed using software and hardware
 
 
 

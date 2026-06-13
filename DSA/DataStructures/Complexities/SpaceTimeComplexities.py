@@ -1,3 +1,8 @@
+# Big O Analysis:
+    # a way for us to talk about how sow are fast an algorithm will run as input grows
+    # we are talking of worst case scenario
+
+
 # BigO notation:
 #     Big O notation is a mathematical notation that describes the limiting behavior of a function when the 
 #     arguments tends towards a particuler value or infinity.
@@ -71,11 +76,23 @@
 # array = [1, 2, 3, 4, 5]
 # print_first(array)
 
-# # O(2) - still constant time complexity, as we are performing a fixed number of operations (2 print statements) regardless of the size of the array. However, we typically drop constants in Big O notation, so this would still be considered O(1).
+# # O(2) - still constant time complexity, as we are performing a fixed number of operations (2 print statements) regardless of the size of 
+# the array. However, we typically drop constants in Big O notation, so this would still be considered O(1).
 
 
 
+# In Python, a dictionary offers the ability to look items up by key, which is an operation that is independent of the size of the dictionary:
 
+# this is a constant time lookup
+# org = organizations[org_id]
+
+# Dictionary lookups are O(1). Which is one of the reasons dictionaries and dictionary-equivalents in other languages are used all over the place.
+
+
+# Constants Don't Matter
+    # Big-O notation only describes the theoretical growth rate of algorithms. It doesn't deal with the 
+    # actual time an algorithm takes to run on a given machine. As such, when doing Big O analysis, we don't 
+    # let ourselves get bogged down in details.
 
 
 
@@ -155,11 +172,32 @@
 #     #    O(n) + O(m)
 #     #  = O(n + m)
 #     #  = O(n) 
-#         # as the runtime complexity of both loops is linear, we can say that the overall runtime complexity of the method is O(n) regardless of the number of loops we have, as long as they are linear.
+#         # as the runtime complexity of both loops is linear, we can say that the overall runtime 
+          # complexity of the method is O(n) regardless of the number of loops we have, as long as they are linear.
 
 
 
+# Order Log N
+    # O(log(n)) algorithms are only slightly slower than O(1), but much faster than O(n). They do grow according to 
+    # the input size, n, but only according to the log of the input.
 
+# O(n):
+    # n 	time
+    # 8 	8 ms
+    # 64 	64 ms
+    # 1024 	1024 ms
+    # 1048576 	1048576 ms
+
+# O(log(n)):
+    # n 	time
+    # 8 	3 ms
+    # 64 	6 ms
+    # 1024 	10 ms
+    # 1048576 	20 ms
+
+    # log algorithms grow at 1st but then become fast as the input size grows
+
+# A binary search algorithm is a common example of an O(log(n)) algorithm. Binary searches work on a pre-sorted list of elements.
 
 
 
@@ -227,6 +265,11 @@ def triple_nested_Loop(arr):
 
 
 
+# O(nm)
+    # O(nm) is very similar to O(n^2), but instead of a single input that we care about, there are two. 
+    # If n and m increase at the same rate, then O(nm) is effectively the same as O(n^2). However, if n or 
+    # m increases faster or slower, then it's useful to track their complexity separately.
+
 
 
 # O(log n):
@@ -274,6 +317,12 @@ def triple_nested_Loop(arr):
     # the logarithmic curve slows down as the input grows while exponential curve grows faster and faster
 
     # obiviously an algorithm that runs in exponnetial timeis not scalable at all, as it will become very slow very soon 
+
+
+
+
+# O(n!) - factorial
+
 
 
 
@@ -336,3 +385,10 @@ def greet(arr):
                     # space complexity of such funcs will be O(1) -> constant 
                 # and if a func have a list etc declared and it dpends on the size of outer list(can have multiple values)
                     # then the space complexity of such methods will be O(n) - relative linear
+
+
+
+
+# How would we reduce O(2 * log(2 * n))? => O(log(n))
+
+# What is the Big O of sum() and double_sum() respectively? => O(n) O(n)

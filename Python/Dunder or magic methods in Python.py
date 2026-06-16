@@ -133,16 +133,16 @@ class String:
 if __name__ == '__main__':
     
     string1 = String('Hello')
-    print(string1 +' Geeks')
+    print(string1 +' jamal')
 
 
 # Output
 
-# Hello Geeks
+# Hello jamal
 
 # Explanation:
 
 #     __init__(self, string): Initializes the object with a string.
 #     __repr__(self): Provides a readable string representation of the object for debugging.
 #     __add__(self, other): Overloads the + operator to allow adding a string to the object’s string attribute.
-#     string1 + ' Geeks' – Calls __add__, returning 'Hello Geeks'.
+#     string1 + ' jamal' – Calls __add__, returning 'Hello jamal'.

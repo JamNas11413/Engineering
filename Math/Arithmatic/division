@@ -1,0 +1,33 @@
+division:
+    an inverse operation of multiplication 
+
+    division breaks a larger number into a group of smaller numbers of identical size(quotient)
+
+it gives us a quotient 
+
+let say we want 15 apples and there are baskets each contains 5 apples,
+    how many basket should we take?
+    we simply:
+        15 / 5 = 3
+            15 -> dividend {the total}
+            5 -> divisor {thde known int/number}
+            3 -> quotient {the unknown number}
+
+represented by:
+    a division sign(dot above a line and a dot below the line)
+    a slash / angled line 
+    a horizontal line 
+
+
+    15/5 = 3
+        the 1st number should be divided by the 2nd (15 divided by 5)
+        numerater = divident 
+        denomenator = divisor 
+
+
+division is not commutative 
+    10/2 != 2/10
+
+division is not associative
+    (10/2)/5 = 1
+    10/(2/5) != 1

@@ -1,0 +1,29 @@
+Multiplication:
+    as in addition two numbers combines but give a product instead of sum
+
+    An abbriviated form of repeated addition 
+        add 2, 5 times
+            2 + 2 + 2 + 2 + 2 = 10
+
+            or
+
+        2 * 5 = 10   # short an easy to write and solve 
+            reads two times 5 # time = *
+
+            2 and 5 are factors
+            10 is product
+    represented by:
+        a coss(x)
+        a dot(.)  # different than decimal point as the multiplication dot is not at bottom it is at middle vertically
+        an asterisk(*)
+        or nothing => 3y ==> three times why
+
+multiplication combines identical groups of items into a single larger number(product)
+
+
+multiplication is commutative 
+    10*2 = 2*10
+
+multiplication is associative 
+    (2 * 3) * 4 = 24
+    2 * (3 * 4) = 24

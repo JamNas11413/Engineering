@@ -31,3 +31,11 @@ division is not commutative
 division is not associative
     (10/2)/5 = 1
     10/(2/5) != 1
+
+
+the divident can be greater or smaller  
+    if greater:
+        it will give us a whole number quotient 
+    if smaller:(divisor > divident)
+        it will give us a value between 0 and 1(decimal)
+

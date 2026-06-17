@@ -1,0 +1,99 @@
+Fraction:
+    means parts
+
+    1/2 => half / one 2nd 
+    1/4 => one 4th
+
+
+1/2 a fraction of value in between 0 and 1 
+
+
+let take a pizza which is cutted down to 8 slices:
+    i can say: 1(pizza) / 8(slices)
+        gives a fraction of one eighth
+
+        means each slice is one eighth of the pizza 
+
+    if i eaten 2 slices, i have eaten 2/8 (two eighth)
+
+    if whole pizza(ijaz is very hungry)
+        8/8
+
+lets say again, the pizza is cutted into 4 clices instead of eight:
+    if i ate 1 slice i have eaten 1/4 
+
+WE CAN SEE that eating one fourth is equal to two eighth
+    1/4 = 2/8 
+    => 1/4 = 1/4
+
+    AS we can manipulate a fraction by doing the same thing to both the denomenator and the numerater
+        in above case devide 2 by 2 (numerater) and also divide 8 by 2 (denomenator)
+
+
+    
+
+COMPARING THE SIZE OF Fractions:
+    if same denomenator:
+        the one with bigger numerater is bigger
+            i.e 3/8 < 5/8
+    
+    if  differnt denomenator:
+        i.e 3/8, 3/10
+        we can:
+            draw two circles one divided into 8 parts and the other divided into 10 parts 
+            now shade 3 sections in 1st and 3 parts in 2nd 
+            you will clearly see that the 1st one have more shade area
+
+            so 3/8 > 3/10
+
+        we can aslo:
+            convert into dicimal (i.e perform division)
+            3/8, 3/10 = 0.375, 0.3
+            = 0.375 > 0.3
+
+        or find Least Common Denomenator
+
+
+SOMEM FRACTION CAN BE GRAETER THAN 1:
+    this will be the case if the divident is greater than the divisor but we can't express this is a whole number 
+    i.e 4/3 four 3rd
+        as 3/3 = 1 (three pieces of circle divided into 3 will be equal to one circle)
+
+    4/3 is an improper fraction 
+        we can either leave them as they are 
+                    or
+        convert into  a mixed fraction
+            i.e 4/3 = 1 as whole 1/3(1 1/3)
+
+
+Mixed fractions can be useful:
+    let say we have a pizza party and my 10 party friends each want 3 slices 
+        total slices = 3 * 10 = 30
+        the pizza maker cut a pizza into 8 slices 
+
+    HOW MUCH pizzas should i ordered
+        pizzas = 30 / 8 = 3.75 = 4 (reduces to 4)
+
+            or
+        
+            8 + 8 + 8 = 3 pizzas = 24 slices
+            30 - 24 = 6
+
+            so we need: 3 6/8 (3 pizzas and 6 slices of eight slices pizzas)
+
+    otherway around:
+        let say we ate 4 3/10 pizzas => the fracton means 4 whole pizzas of 10 slices and 3 slices of 10 slicce pizza 
+        total slices = 4 * 10 + 3 = 43 slices 
+
+
+CONVERSION OF MIXED AND IMPROPER FRACTION:  
+    mixed farction: 4 3/8
+    improper fraction: 35/8
+
+    conversion:
+        mixed to improper:
+            5 3/8 = 43/8 ( whole * denomenator + numerater = 43(numerater of improper fraction) [denomenator remains the same] )
+        improper to mixed:
+            17/7 = 2 3/7 ( as 17 is not divisible by 7, find a number less than 17 that is divisible by 7: 14/7 = 2 [whole], 17 - 14 = 3 [numerater] [ denomenator remain the same ] )
+        
+

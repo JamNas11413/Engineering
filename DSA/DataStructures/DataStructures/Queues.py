@@ -13,7 +13,7 @@
 
         # In the Lord's tongue (American English) we say "I'm waiting in line", but in the UK they say "I'm waiting in a queue". Alan Turing was British, so, we just gotta let them have this one
 
-    # queue.png
+    #  DataStructures/DataStructures/picNotes/queue.png
 
 
 # Queues are use more often as they perfectly model so many systems

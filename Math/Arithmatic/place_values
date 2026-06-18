@@ -1,0 +1,146 @@
+numbers can get very large very fast
+so we can't give each inique number its unique symbol
+
+there fore we need a system that uses just a few symbol over and over to represent evry numerical value imaginable 
+    so we invented place values 
+
+lets say i am counting stars in the night sky with my little Mary 
+    we get 1 then 2 and 3 ... 9
+    but when  we hit 10 it becomes a two digit number 
+        that is because we place 1 at ten place and the unit place restart from 0
+
+    after we get 19 the tenth place goes 1 up:
+        20 
+
+        two at then place indicated that we hit 10 twice 
+
+        it goes up to 99 # both the places are at there highest digits so we need a 3rd place
+
+    AND SO ON
+
+
+    100    = 1     0     0
+    hundred  ten  unit
+
+this way we can represent any number using the ten digits / symbols 
+
+
+
+100000000000000000000000000000000000000000000000000000000000000000000000000000 ... - infinitum
+or  10^100 googol
+
+we count places from right to left 
+
+
+so digit 5 and 6 and 7 can comes and form 567
+
+    which gives us five hundred and sixty seven 
+        because 5 is on hundred place = 5 hundreds
+                6 is on tenth = 6 tens
+                7 is on unit place = seven ones
+
+
+use the place value to convey magnitude(number)
+
+we use place values to make estimates:
+    ie if between 5 nad 15 
+        10 cloud be a good guess
+            because rounding(subtracting one) from each side will end at 10 
+        it means that the 1 t thenth place is sure while zero at unit place is uncertain 
+
+    extimates are kind of measurment
+
+
+we can do the same with a party lets we are counting peolle ina party the 1st table has 10 people 
+    we don't know the exact number of people on each table but if we take the 10 as a base value 
+    there are overall 5 tables so we  can say that there are around 50 people but nowhere near 200 
+    so 100 is a good estimate 
+        which means the 1 at hundred place os cetain while the zeros at ten and unit places are not certain
+            there clould be more or less hefe at these places
+
+
+
+numbers can grow in both direction they can get infinetly large also infinetly small ==> infinite decimal
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decimal places are for magnitude less than one:
+    we could also represent the fraction with an improper or mixed fraction
+
+    i.e a circle divided into 10 fractions
+        so the over all circle could represent 1 and ecah of the parts are trepresenting 0.1(1/10) as the 1 is at tenth place 
+        if we now add the ramianig 9 parts to it will become: 0.1 + 0.9 = 1
+
+
+    IN THIS WAY if we wanna  representn a number between two whole numbers  
+        like 10 parts of the 1st circle is one circle but one part of the 2nd circles when combined, not form two ciecles
+            so the value is in between 1 and 2 
+            i.e 1.1 => one cicle and one part  # 1 at unit place and 1 at tenth place 
+
+
+
+    THE place vlaues to tje right of the dicimal point work as the reguler ones 
+        when we go to the left each place value is ten times greater than the privius 
+            while
+        when we go to right each place value is ten time less than the prevoius
+
+
+        so:
+             1234.56789
+             4 -> unit place 
+             3 -> tenths place 
+             2 -> hundredths place
+             1 -> thousandths palace 
+             .
+             5 -> tenths place 
+             6 -> hundredths place
+             7 -> thousandths place 
+             
+
+if a circles is divided into 100 little parts 
+    each part = 0.01 = 1/100
+        0.01 => 1 at hundrdths place menaing one at hundred
+
+so the symbol never change the place do which evaluates the magnitude(value)
+
+
+we can do operations with dicimal values jus as we would do with normal number:
+    1.2
+   +3.4
+_________
+   =4.6    # add the tenth places and unit places (start from the write digit as oi well make ten if it was lage i.e => next)
+
+   3.9
+  +7.3
+  ____
+  =11.2  # the 9 + 3 = 12 
+         # so we took the ten and add it to the unit place {so we should srart from thr right}
+            # this is simmiler asee would do with 39 and 73 = 112, here is just the dicimasl point which alter the magnitude and do not affect the operaion of addition
+
+[we should just line up the place value i.e add decimal with decimal and integral with integral]
+
+
+
+
+
+
+
+

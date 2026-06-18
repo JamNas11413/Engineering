@@ -1,4 +1,4 @@
-# Lists:
+# Lists: _> arrays [the most basic the most important]
 #     Okay, we know what lists are, BUT from a data structures and algorithms perspective, WHAT ARE THEY GOOD FOR? Let's break it down by operation:
 #         Append: Appending an element to the end of a list, e.g. cars.append("ford") 
 #             is (on average) O(1). 

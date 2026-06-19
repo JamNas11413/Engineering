@@ -39,3 +39,38 @@ additon is also associative(if performing two successive addtiton the order in w
     (3 + 4) + 2 = 9
 
 
+
+
+Addition of Large Numbers:
+     1
+    1293
+   +2614        # the place values should perfectly allign unit inder unit and so on
+   ______
+   =3907   # we carry the 1 from 1 to the hundred place and then add the 1 to the hundred places 
+         # we start operations from right as place ualues start from right i.e unit the t the left tenth
+
+
+
+
+let say we have a list of number to add:
+    [12,25,34,13,15]
+        # one way to add them by adding two numbers at a time 
+            i.e 12 + 25 = 37 
+            37 + 34 ...
+             but it is time consuming so we can 
+
+        1
+        12
+        25
+        34
+        13
+      + 15
+    ----------
+    =   99
+
+
+with negative values:
+    5 + (-2) = 5 - 2 = 3 because + * - = - (multiplication of opposite sign always gives - ans of same  sign gives +)
+    5 - (-2) = 5  + 2 = 7
+
+    

@@ -1,0 +1,32 @@
+Property:
+    in math it refers to the fundamental rule or law
+
+    
+    
+Properties of numbers:
+    the fundamental rule or law that dictates how numbers should behave when you oerform operation on them
+
+    Properties:
+        commutative property:
+            obaid by:
+                a + b = b + a
+                a * b = b * a
+
+        associative property:
+            obaid by:
+                (a + b) + c = a + (b + c)
+                (a * b) * c = a * (b * c)
+        
+        distributive property:
+            a * (b + c) = (a * b) + (a * c)       # distributive property of multiplication over addition 
+            a * (b - c) = (a * b) - (a * c)       # distributive property of multiplication over subtraction 
+
+            if a number is multiplied by a sum or diffrence it can be distributed accross that sum or difference 
+
+
+            we can also do the opposite:
+                5(17) = 5(10 + 55 + 52)
+                      = 5(10) + 5(5) + 5(2)
+                      = 50 + 25 + 10
+                      = 85
+

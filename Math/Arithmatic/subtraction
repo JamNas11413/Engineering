@@ -28,4 +28,20 @@ subtraction is not associative:
     2 - (3 - 4) != -3 
 
 
+Subtraction of Large Numbers:
+    0  12 8  13    # as we borrowed ten from tenth place and add it to it  # and 9 beomes 8 as we subtract 10  # at the hundred place we have ten and we can't  subtract 6 from 2 so we will borrow 1 of the thousands from the thousandth place and it become 12 on hundredplace so 1200 beacuse 200 + 1000 
+    1  2  9  3
+   -   6  1  4        # the place values should perfectly allign unit inder unit and so on
+   ____________
+   =   6  7  9       # 3 is smaller than 4 so we cant subtract it from, sowe will borrow on of the 10 from the tenth place 
+    # start subtracting from right as place ualues start from right i.e unit the t the left tenth   
+
+
+
+with negative values:
+    5 + (-2) = 5 - 2 = 3 because + * - = - (multiplication of opposite sign always gives - ans of same  sign gives +)
+    5 - (-2) = 5  + 2 = 7
+
+
+- 2 - (-2) = -2 + 2 = 2 - 2 = 0
 

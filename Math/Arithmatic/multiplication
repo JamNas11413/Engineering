@@ -27,3 +27,69 @@ multiplication is commutative
 multiplication is associative 
     (2 * 3) * 4 = 24
     2 * (3 * 4) = 24
+
+
+
+Multiplication of large number:
+    
+    # we should memorize tables
+
+    14 
+   *11
+   ____
+   = 14
+   +140         # we put the 4 at ten place beacuse we multiplied it by a tenth place  digit  # we can also put 0 below unit place 4 as 4at the 10 place altready represent that 
+   ____
+   154
+
+
+QUICKLY:
+    if we want a quik answer like single digit tables:
+        we can use distributive property
+            14 * 11 
+                # we can split the eleven to more easy numbefr to multiply with like 5 or ten 
+           = 14(10 + 1)
+           = (14 * 10) + (14 * 1)
+           = 140 + 14
+           = 140 + 10 + 4
+           = 150 + 4
+           = 154
+            # the claculation should be done in mind 
+
+        425 * 12
+               # we can split the eleven to more easy numbefr to multiply with like 5 or ten  and another sigle number
+            = 425(10 + 2)
+            = (425 * 10) + (425 * 2)
+            = 4250 + ((400 * 2)+ (25 * 2))
+            = 4250 + 800 + 50 
+            = 4300 + 800
+            = 5100
+
+
+
+
+we should be strive to be able to do mental math
+
+
+
+with negative values:
+    5(-2) = -10 
+        + 5 * - 2
+        (+1 * -1)5*2 (+1 * -1)
+        -10
+
+    
+
+signs:
+    + * + = +
+    + * - = -
+    - * - = +
+    - * + = -
+
+    same = plus 
+    opposite = minus
+
+
+
+WE SHOULD FOLLOW TRICKS AS IT HELPS US UNDERSTANDINGMMATHEMATICAL IDENTITIES and go beyond just simple memorization
+    like cancelling etc

@@ -1,0 +1,63 @@
+# Exponents
+#     An exponent indicates how many times a number is to be multiplied by itself.
+    # as multiplication represents repeated addition exponents represents repeated multiplication
+
+# For example:
+
+# 53 = 5 * 5 * 5 = 125
+
+# Sometimes exponents are also written using the caret symbol (^):
+
+# 5^3 = 53
+
+
+#     5**3 is read as "5 to the power of 3"
+#     5 is the "base"
+#     3 is the "exponent"
+
+
+# {
+# x**1 = x
+# x**0 = 1
+# }
+
+# Exponent 	Expanded Form 	    Result
+# a0                                0     # you can't write something no times
+# 21                                2    
+# 22 	        2 * 2 	            4   # squared 
+# 23 	        2 * 2 * 2 	        8   # cube
+# 32 	        3 * 3 	9
+# 33 	        3 * 3 * 3 	        27
+# 42 	        4 * 4 	16
+# 43 	        4 * 4 * 4 	        64
+# 44 	        4 * 4 * 4 * 4 	    256
+
+
+# 2^10 == 1024
+
+
+
+negative eponents:
+    represents repeated division 
+    2^-2 
+    = 1/2^2
+    = 1/2 * 1/2 = 0.5 * 0.5  # multiplyiong decimal numbers results in smaler number
+    = 0.25
+
+
+exponnet rules:
+    a^n* * a^m = a^n+m   # x^2 * x^3 = x.x.x.x.x = x^5 = X^2+3
+    a^n/a^m = a^n-m    # x^3 / x^2 = x.x.x / x.x = (as the 2 Xs cancelled out) x^1 = X^3-2
+    (x^a)^b = x^a*b   #  (x^2)^3 =  (xx)^3 = (xx)(xx)(xx) = xxxxxx = x^6
+
+
+        a^n + a^m =  ==> no rule 
+
+1/x^2 = x^-2
+x^3/x^3 = x^3-3 = 0
+    also:
+        all the Xs cancelled 3 x devided bu 3x gives us 1 i.eponents
+            x^3/x^3 = 1
+    hence:
+        x^0 = 1    
+

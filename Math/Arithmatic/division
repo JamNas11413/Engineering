@@ -39,3 +39,73 @@ the divident can be greater or smaller
     if smaller:(divisor > divident)
         it will give us a value between 0 and 1(decimal)
 
+
+
+Long Division:
+    12/3 = 4
+     but 
+    625/3 = hard to tell this way
+
+     208
+    ______
+   3|625
+    -6
+   --------
+     02
+    - 0
+   --------
+      25 
+      24    # we will devide 25 by multiple of 3 very closer to 25 -> as ther are also 3 * 7 = 21 but we will chhose 3 * 8
+    ------
+      1  
+
+
+here:
+    625 = divident
+    208 = quotient (answer)
+    3 = divisor
+    1 = reminder
+
+    answer:
+        208 r1
+            read as, six hundred and twenty tive divided by 3 is 208 remainder 1
+
+    # we go one digit at a time from left to right unlike multiplication AS THEY ARE OPPOSITE 
+
+
+
+
+     36.09
+    ______
+  11|397
+    -33
+    ------
+      67 
+      66
+    ------
+       100    # if we don't like / want reminder we can keep going jus put a decimal at quotient and append a zero to reminder at tenth place 
+        99    # we added a zer but the it is still small so we will add an another zero to both quotient sand the remainder
+  -----------
+
+
+
+  # this process will go on as it is a repeated decimal so we can leave them here 
+
+  
+
+
+with negative values:
+    10/-2 = -5 
+        + 10 / - 2
+        (+1 / -1)10/2
+        -5
+
+
+signs:
+    + / + = +
+    + / - = -
+    - / - = +
+    - / + = -
+
+    same = plus 
+    opposite = minus

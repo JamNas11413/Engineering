@@ -109,3 +109,62 @@ signs:
 
     same = plus 
     opposite = minus
+
+
+
+
+
+divisibility:
+    a number is only divisible bu certain other numbers 
+        which means that they can only be divided evenly in certain ways
+
+    a number is divisible by another number if their quotient is a whole number
+
+
+10:
+    can be divided by:
+        1: 10/1 = 10  # a whole number i.e no decimal  # every number is divisible by one 
+        2: 10/2 = 5 #because it is an even number
+
+        3: 10/3 =3r1 # not devisible 
+
+        5: 10/5= 2  # factor as it is half of tenth
+
+            BUT from here:
+                no number bigger than the half of the larger number will be a factor wxcept the larger number itself
+            
+        10: 10/10 =1  # b\c the number itself 
+
+
+
+are there numbers that have no factors:
+    no becauseevery number will have a factor both 1 and itself 
+
+
+are there numbers that have no gfactor beside 1 ans itself?
+    yes and they are called prime numbers
+
+
+
+prime numbers:
+    1 does not count because one and itself will be the same thing
+    2 yes prime #only 2 factors  1 and itself
+    3 
+    5
+    11 
+    13
+    17
+    19
+    23
+    ...
+    they are infinite
+
+
+
+Prime Factorization:
+    the factoring of a number until only prime numbers remains
+    since it is farthest we can go
+
+    there is only one unique set of prime factors for any number and this is called the FUNDAMENTSL THEOREM OF ARITHMETHIC
+
+    # pic/primeFact.jpeg

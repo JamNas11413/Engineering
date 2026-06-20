@@ -101,3 +101,58 @@ CONVERSION OF MIXED AND IMPROPER FRACTION:
 
 WE SHOULD ALWAYS REDUCE A FRACTION IF IT CAN to lowest term 
     because we wnna make simplicity
+
+
+
+
+ADDITION AND SUBTRACTION OF FRACTION:
+    1/8 + 3/8  lcm = 8
+    # we divide the LCM by the denomenater and then we multiply th quotient to the numerator:
+        8/8 = 1 
+        1* 1 = 1
+
+    = 1+3
+       /
+      8
+
+    = 4/8  # we should always reduce a fraction if it can be 
+    = 1/2
+
+
+
+
+     1/3 + 1/4
+        lcm = 12
+
+    4 + 12
+=   /
+     12
+
+= 16/12 
+= 8/6
+=4/4  # in lowest form
+
+
+
+
+
+
+MULTIIPLICATION  AND DIVISION OF Fractions:
+
+MULTIIPLICATION:
+
+    1/2 * 2 = 2/2 = 1
+        # numerater multiply with numerater and denomenater multiply with denomenater
+            # 2 hasdenomenater of 1
+
+    1/2 * 2/3 = 2/6 = 1/3
+
+DIVISION:
+
+    1/2 divided by 2
+    = 1/2 * 1/2  # we convert the division sign into multiplication and take receproval of 2nd term
+    = 1/4 # now we perform simple multiplication num*num , den*den
+
+
+
+

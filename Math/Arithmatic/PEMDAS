@@ -1,0 +1,25 @@
+Order of arithmetic operations:
+    PEMDAS: parenthesis, exponents, multiplication, division. addition, subtraction
+        a conventio to get the same answer to a calc
+
+
+    we do calculationby following the PEMDAS:
+        1st we evaluate any parenthetical terms
+        then we apply exponents
+        then we perform multiplication/division   {we do operation to left 1st (as we go from left to right) }
+        then we perform addition/subtraction  {we do operation to left 1st (as we go from left to right) }
+
+
+  5*3+4-2*6    # no parenthesis or exponents so strraight jump to multiplication
+= 15+4-12   # it is just addition and subtraction sowe can go from left to right
+= 19-12
+= 7
+
+
+  15 + (3+2)^2 - 9 * 6 + 2^3
+= 15 + (5)^2 - 9 * 6 + 2^3
+= 15 + 25 - 9 * 6 + 8
+= 15 + 25 - 54 + 8
+= 40 - 54 + 8  # just go from left to right
+= -14 + 8
+= -6   # this is the only correct evaluaution of this expression 

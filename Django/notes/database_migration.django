@@ -63,3 +63,14 @@ IF YOU WANRT MORE CONTROL ON THE DATABASE SCHEMA LIKE CHANGING NAME OF A TABLE E
 
 
 we should follow the default convention of a framework 
+
+
+
+
+
+
+opening sqllite in vs code 
+    ctr + shift + p 
+
+then   
+    open database

@@ -1,3 +1,59 @@
 every django app comes with full featured and flexiible auth system
     
+istalled apps ad authentication middleware 
+
+
+Customizing  user model:    { user model === abstract user model}
+    some time we needa store some othe data in the table 
+    two methods:
+        use inhritance to extend the abstarctuser model
+            i.e make another table called AppUser will inherite the user model
+
+            we will ake an another model called User in an app which we will not reuse and very specific to our project 
+            in th User model we will inherite the abstract user class
+                 so all the fields that the abstarct user class is now also in the user class
+            now add new fields trhat we want here 
+            now we have to tel django that we wanna use this model insetead of the sbdtract user model for authentication
+
+        so in settings.py 
+           AUTH_USER_MODEL = 'app.User'
+
+           {
+            if we don't want dpendanvy in two app we can import the  odel from the core of ouyr app (which is not reusable and very sepcific to our app)
+            so we can import the model from setting.py as well
+           }
+
+           we will get some errors and this is why we can't use thos uproach at middle of a project
+
+           the only way to solve this problem is to drop and recreat our detabsee {if we drop and re create our database we have create a super user as well}
+                so we can do the 1st migration
+
+              WE SHOULS ALWAYS CREATE A TABLE IN THO CORE APP LIKE THIS EVEN IF WE HAVE  NO PLANS OF DOING SO 
+                SO WE DON'T HAVE TO DROP OUR DATYABSE IN THE FUTURE 
+
+                core.models.py
+                    class User(abstarctUser):
+                        pass
+        
+        create a profile
+            so we can create a profile model and in this we will have a one to one relation to the user model
+            so we are not using inheritance instead using composition
+            so the profile model is composed of a user model
+
             
+            profile of a user in sales app can be as customer etc
+
+            we needa link it to AUTH_USER_MODEL 0ne to one field 
+                import from setting.py so no dependancy of apps
+
+                -------------------------------------------------
+
+                
+
+
+
+
+        differances:
+            we should use the 1str approach only for storing attr related to auth 
+            anything extra that is not related authentication should be stored  a profile table i.e user birthdate, addr etc
+

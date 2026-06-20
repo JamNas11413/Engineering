@@ -50,7 +50,10 @@ MIDDLEWARE = [  # a function that take a req and either pass it to the next midd
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',  # this is ajthetication middleware, it job is to read the user info ffrom the request and send the user attr on the request obj
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # this is authetication middleware, it job is to read the user info ffrom the request and send the user attr on the request obj
+        # when a request is passe to a viw the django will pass thge request from these middelwares 
+        # the auth middleware will set the user onj on the request {who is the request done by => either anonymous or a specific user}, so the backend can let say do function for hr user i.e recomendation etc
+        # we  can access the request.useer in our view mwthod
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]

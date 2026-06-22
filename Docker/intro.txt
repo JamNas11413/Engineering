@@ -20,7 +20,9 @@ what problem Docker solves:
 
 
 
+
 computing devices components:
+
     computing devices = servers, laptop, phones etc
     they will have a number of components:
         CPU -> processing -> heart of the machine
@@ -113,7 +115,7 @@ As VMs are better than the physical but they have some issues
     Poor Dev/test/prod parity 
     os overhead
     low portability 
-    etc 
+    etc
 
 
 

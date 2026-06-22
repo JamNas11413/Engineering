@@ -1,0 +1,21 @@
+SELECT 
+    name, 
+    unit_price, 
+    (unit_price * 1.2) AS new_price
+FROM products;
+
+
+SELECT * FROM orders WHERE order_date like '%2026'
+
+SELECT items FROM order_table WHERE ODER_ID = 6 AND price > 30
+
+SELECT * FROM products WHERE stock IN(48.23,4,5)
+
+SELECT * FROM borns WHERE born BETWEEN '7346766' AND '723R756'
+
+SELECT * FROM order_table WHERE ORDERiD=2 ORDER BY QUANTITY DESC
+
+SELECT * 
+    FROM Orders o
+    JOIN Customers c            [inner is iptional]
+    ON o.CustomerID = o.CustomerID;         [o and c are alias]

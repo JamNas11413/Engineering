@@ -1,0 +1,101 @@
+SQL:
+    structured query langauge
+    not a case sensitive[best practice use capital sql kw and sammal names etc]
+we terminate each stateemnt with a semicolon
+
+SELECT * FROM customers   [selct all the entries from customer column]
+
+SELECT * FROM customers WHYERE CustomerName like 'a%' ORDER BY first_name     [the order of this statement is that they are fixd means we can't chang the order of this claus]
+
+comments:  --WHERE   -> SINGLE LINE COMMENT 
+
+we can also select specific columns in a a table:
+
+SELECT 
+    first_name, 
+    last_name, points, 
+    (points + 10) * 100  AS discount_factor /// 'discount factor'    {we gave it a name}
+FROM Customers
+
+
+CAMMONDS:
+    USE -to select a database
+    SELECT - extracts data from a database
+    UPDATE - updates data in a database
+    DELETE - deletes data from a database
+    INSERT INTO - inserts new data into a database
+    CREATE DATABASE - creates a new database
+    ALTER DATABASE - modifies a database
+    CREATE TABLE - creates a new table
+    ALTER TABLE - modifies a table
+    DROP TABLE - deletes a table
+    CREATE INDEX - creates an index (search key)
+    DROP INDEX - deletes an index
+
+
+
+kw:
+    DISTINCT -Which keyword can be used to ignore duplicates? To return unique values from a column that contains duplicates      {COUNT(DISTINCT Country)  --> no. of different Countries}  
+
+    WHERE - for fltering i.e SELECT * FROM Customers WHYERE CustomerID = 32;  , SELECT * FROM Customers WHYERE CustomerName = "jamal";  
+
+    ORDER BY - to sort records in ascending or descendbg order i.e for ascending: SELECT * FROM Products ORDER BY Price ASC;      Select all records from the Customers table, sort the result reversed alphabetically by the column City.  -> SELECT * FROM Customers ORDER BY City desc;       Select all records from the Customers table, sort the result alphabetically, first by the column Country, then, by the column City. -> SELECT * FROM CustomersORDER BY Country, City;   In the SQL ORDER BY clause, what is the default sorting order is ASC 
+
+    AND - The AND operator is used to filter records based on more than one condition(all) TO BE True       SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%'; -> All customers from Spain whose names start with 'G'  {TEXT VALUES IN SINGLE QUOTES}
+
+    OR - What is the primary purpose of the SQL OR operatoR is to To filter records based on multiple conditions where at least one condition is true        SELECT * FROM Customers WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');   -> Which SQL query would select all Spanish customers whose names start with 'G' or 'R'
+
+    NOT - To filter records that do not match a specified condition    Use the NOT keyword to select all records where City is NOT "Berlin". -> SELECT * FROM Customers WHERE NOT City  = 'Berlin';        Select the correct statements to return all customers whose names do NOT start with the letter 'A':  -> SELECT * FROM Customers WHERE CustomerName NOT LIKE ' A%';      Which query will select customers who are NOT located in 'Paris' or 'London'    -> SELECT * FROM Customers WHERE City NOT IN ('Paris', 'London');
+
+    INSERT INTO - To add new records to a table  INSERT INTO Customers (CustomerName, City, Country) VALUES ('Cardinal', 'Stavanger', 'Norway');  How can you insert multiple rows with a single INSERT INTO statement in SQL  -> INSERT INTO table_name VALUES (value1), (value2), (value3);
+
+    NULL - a fielld with no value, we check for NULL usin  IS NULL operator Which of the following SQL queries would retrieve customers with no address provided SELECT * FROM Customers WHERE Address IS NULL;     Select all records from the Customers where the PostalCode column is NOT empty.  -> SELECT * FROM Customers WHERE PostalCode IS NOT NULL;    What is the correct SQL syntax to test if a field is NOT NULL?     -> SELECT column_name FROM table WHERE column_name IS NOT NULL;   
+
+    UPDATE - To modify existing records in a table    Update the City column of all records in the Customers table. -> UPDATE Customers SET City = 'Oslo';      Update the City value and the Country value.  -> UPDATE Customers SET City = 'Oslo' Country= 'Norway' WHERE CustomerID = 32;     What will happen if you omit the WHERE clause in an UPDATE statement?  -> All records will be updated
+
+    DELETE  - To delete existing records from a table     Delete all the records from the Customers table where the Country value is 'Norway'.   -> DELETE FROM Customers WHERE Country = 'Norway';        Delete all the records from the Customers table. -> DELETE FROM Customers;     What will happen if you omit the WHERE clause in a DELETE statement? -> All records in the table will be deleted   How would you delete all records from a table named 'Customers' without deleting the table itself? -> DELETE FROM Customers;
+
+    SELECT TOP -  SELECT TOP 5 * FROM Customers; -> Select the first 5 records from the Customers table     Drag and drop the correct syntax to select the first 3 records in MySQL, sorted by CustomerName in descending order.  -> SELECT * FROM Customers ORDER BY CustomerName DESC LIMIT 3;
+
+    LIMIT - is used to limit the number of returned records in MySQL?
+
+    MIN()-function - Returns the smallest value of the selected column      Use the MIN function to select the record with the smallest value of the Price column. -> SELECT MIN(PRICE) FROM Products;
+
+    MAX() -function -Returns the LARGEST value of the selected column        Use an SQL function to select the record with the highest value of the Price column.  -> SELECT MAX(PRICE) FROM Products;
+
+    AS - keyword can be used to give a column a descriptive name
+
+    COUNT() - function - Returns the number of rows that match a specified criterion     Use the correct function to return the number of records that have the Price value set to 18. ->  SELECT COUNT(*) FROM Products WHERE Price = 18; 
+
+    SUM() - function - Returns the total sum of a numeric column     Use an SQL function to calculate the sum of all the Price column values in the Products table. -> SELECT  SUM(PRICE) FROM Products;
+
+    AVG() -function - Returns the average value of a numeric column    Which of the following queries will return the average price of products? -> SELECT AVG(Price) FROM Products;    What does the AVG() function ignore while calculating the average? -> NULL VALUES
+
+    LIKE - OPERATER - Searches for a specified pattern in a column    Which SQL statement will return all customers with names starting with 'H'? -> SELECT * FROM Customers WHERE CustomerName LIKE 'H%';    Which wildcard in the LIKE operator represents any single character?->The underscore sign (_)     Select all records where the value of the City column contains the letter "a".  ->  SELECT * FROM Customer WHERE CITY LIKE '%A%'    Select all records where the value of the City column starts with letter "a" and ends with the letter "b".->  SELECT * FROM Customers WHERE CITY LIKE 'A%B';    Select all records where the value of the City column does NOT start with the letter "a". ->WHERE CITY NOT LIKE 'A%'       { WHERE CITY LIKE 'A%' => WILL ALSO SEARCH FOR A AND a}
+
+    WILDCARDS:
+
+        % - Zero or more characters
+
+        _ - wildcard should be used to represent a single character in SQL     Select all records where the second letter of the City is an "a". -> SELECT * FROM Customers WHERE City LIKE '_A%';
+
+        [a-f] - specify a range of characters in SQL using wildcards, RANG USING -         Select all records where the first letter of the City is an "a" or a "c" or an "s".-> SELECT * FROM Customers WHERE City LIKE '[acs]%';       Select all records where the first letter of the City starts with anything from an "a" to an "f".  -> SELECT * FROM Customers WHERE City LIKE '[A-F]%';         Select all records where the first letter of the City is NOT an "a" or a "c" or an "f". -> [!acf]
+
+
+    IN - To specify a range of values in a WHERE clause       Which query returns all customers from 'Germany', 'France', or 'UK'?->SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');
+
+    BETWEEN -selects all products with a price between    SELECT * FROM Products WHERE Price BETWEEN 10 AND 20;   WITH TEXT -> SELECT * FROM Products WHERE ProductName BETWEEN 'Apple' AND 'Orange'; 
+
+    AS -FOR ALIAS    SELECT CustomerID AS ID FROM Customers;   
+    
+    JOIN- To combine rows from two or more tables based on a related column        SELECT * FROM Orders LEFT JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+        LEFT JOIN: All records from the left table and matched records from the right table        Returns all records from the left table and matching records from the right table       In some databases LEFT JOIN is called LEFT OUTER JOIN.
+        RIGHT JOIN: Returns all records from the right table and matching records from the left table     In some databases RIGHT JOIN is called RIGHT OUTER JOIN.
+        INNER JOIN: To select only the records that have matching values in both tables     JOIN clause to select all records from the two tables where there is a match in both tables.    SELECT * FROM Orders INNER JOIN CustomersON Orders.CustomerID=Customers.CustomerID;
+        FULL OUTER JOIN: SQL JOIN returns all records when there is a match in either left or right table    Returns all records when there is a match in the left or right table     FULL OUTER JOIN and FULL JOIN are the same    FULL OUTER JOIN can potentially return very large result-sets.
+        self join: To join a table with itself    SELECT A.CustomerName, B.CustomerName FROM Customers A, Customers B WHERE A.City = B.City;
+
+
+    JOING ACROSS DATABASES: SELECT * FROM order_items io JOIN another_db.tablename p ON oi.productID = p.productID      {we only preficx table of theDBS that are not part of the current DB}
+
+    19

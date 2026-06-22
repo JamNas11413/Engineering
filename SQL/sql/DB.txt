@@ -1,0 +1,138 @@
+DATABASE:
+    is a collectiojn of data stored in a formate that can easily be accessed 
+
+IN ORDER TO MANAGE OUR DB WE USE A SOFTWARE APPLICATION CALLED DBMS:
+    data-base management sys:
+        we connects to a dbms and give instructions for quering  and modifing data
+        the DBMS will exe our instructions and send results back 
+        we have several dbms:
+            classified into two categories:
+                1) relational{SQL}:
+                    in it we store data in form of tables that are linked  to each other using relationships, that is why we call it relational databases
+                    Each table stores daa about specific type object like we can have a table for students, customers, produc and so on
+                    SQL is the language that we use to work with these relational database management system{RDBMS}
+                        several RDBMS:
+                            like:
+                                mysql
+                                sqlserver
+                                oracle
+                                etc
+                                {each rbdms has different flavours of sql but all the implementations are very similer and are based on the standard sql specifcation}
+
+
+                2) non-relational{NoSQL}:
+                    in we don't have tables or relationships
+                    it don't use SQL they have their own langs
+
+
+
+starting mysql on linux:
+     mysql -u root -p  (if we create a user then we use the name of the user instead of root and poass insetaed of p)
+
+
+    sudo systemctl staus MySQL
+    sudo systemctl start MySQL
+    sudo systemctl stop MySQL
+
+
+{
+
+┌──(jamnas11413㉿JamKali)-[~]
+└─$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 9.7.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select version();
++-----------+
+| version() |
++-----------+
+| 9.7.0     |
++-----------+
+1 row in set (0.001 sec)
+
+mysql> show datbases();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'datbases()' at line 1
+mysql> show databases
+    -> ^C
+mysql> show databases();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '()' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.051 sec)
+
+mysql> create database bank;
+Query OK, 1 row affected (0.050 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bank               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.002 sec)
+
+mysql> use bank
+Database changed
+mysql> show tables;
+Empty set (0.003 sec)
+
+mysql> create table customers;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table customers(cnoint primary key, cname varchare(100));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary key, cname varchare(100))' at line 1
+mysql> create table customers(cno int primary key, cname varchare(100));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchare(100))' at line 1
+mysql> create table customers(cno int primary key, cname varchar(100));
+Query OK, 0 rows affected (0.068 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_bank |
++----------------+
+| customers      |
++----------------+
+1 row in set (0.003 sec)
+
+mysql> insert into customers values(100, 'jamal');
+Query OK, 1 row affected (0.050 sec)
+
+mysql> insert into customers values(101. 'maryam')
+    -> ^C
+mysql> insert into customers values(101. 'maryam');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''maryam')' at line 1
+mysql> insert into customers values(101, 'maryam');
+Query OK, 1 row affected (0.010 sec)
+
+mysql> select * from customers;
++-----+--------+
+| cno | cname  |
++-----+--------+
+| 100 | jamal  |
+| 101 | maryam |
++-----+--------+
+2 rows in set (0.001 sec)
+
+mysql> 
+
+}

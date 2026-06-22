@@ -1,0 +1,50 @@
+DataTypes supported by MySQL:
+    categories:
+        Stings
+        Numeric
+        Date and Time Types
+        Blob Types -> for storing binary data 
+        Spetial Types -> for storing geometrical or geographical values
+
+
+String Types:
+    CHAR(x) -> fixed lenght 
+    VARCHAR(x) -> variable lenght strings like emails, usernames, pass etc
+
+            even thopugh they arebstring Types we can also store numeric values like zip codes, phone numbers etc b/c we don't use these values in mathematical; calcs and also these value sometimes may contains hypens, cammas etc
+
+        the varchar shyould hav consistant standard lenght like 50 for short strings and 255 for longer strings 
+
+        max lenght for varchar is just over 65K (¬64kb), mena if we use something lo9nger it will be truncated to pevent use MEDIUMTEXT 
+
+    
+    MEDIUMTEXT(x) -> maxlenght = 16 million chars (16MB)
+                    good for storing json objects, csv stings and short to medium size books 
+
+    LONGTEXT: -> MAX LENGHT 4GB 
+                good for storing text books and years of log files 
+                
+    TINYTEXT ->  MAX LENGHT = 255 BYTES / 255 CHARS {1 CHAR === 1 BYTE} 
+    TEXT -> MAX LENGHT = 64 KB LIKE VARCHAR 
+
+
+
+        but for ranges like 255 chars and 64kb we should use varchar because it can be indixed 
+                                we use indexes to speed up our queries 
+
+
+
+    all these bytes support international chrs:
+        english chars: use 1 bytes
+        european and middle eastern : use 2B  {urdu and oushto falls into this category}
+        Asian(like chinese and japanese): use 3B
+
+
+        So, if the type a column is char of 10 mysql will reserve 30 bytes for thr values in that column
+
+
+
+
+Integer Types:  
+            we use integers to store whole numbers that don't have a decimal point
+

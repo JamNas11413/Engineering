@@ -1,0 +1,71 @@
+database:
+    collection of data in a formate that can be easily accessed(digital)
+
+
+DBMS:
+    a software application used to manage our DBs
+    we use sql to inyeract with the dbms and which then use DBs
+    i.e mysql, pps, oracle etc
+
+types:
+    relational db -> RBDMS
+        which stores dat in form of tables
+            i.e mysql, pgsql, oracle etc
+    non-relational db{no-SQL} -> no relations
+        data not stored in tables 
+            i.e mango DB
+
+we use sql to work with relational DBMS 
+
+
+
+
+SQL => structured query lang(just to talk to DBs)
+
+
+    SEQL -> name given by IBM , structured english query lang  {before}
+    SQL -> structured query lang  {now}
+
+
+
+
+
+databases can have one or more tables which will store inter related data
+a tables consist of rows and columns 
+    columns tells us general structure {what info is stored in the table} and they tell us design / structer / echemna
+    rows givess us info about an item in the table in all categories{columns}
+
+
+columns in a db will gives us design of the DB or schema while row will give us info about an indiuvidual entry
+
+
+
+-- wildcard operater = *  meaning all columns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+

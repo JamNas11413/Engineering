@@ -1,0 +1,67 @@
+linux a is a popular OS for server administration 
+    b\c it is safe/secure, flexible and stable
+
+BIOS vs UEFI:
+    you will have either of them on a computer
+    the ways through which we can interact b\w the hardware and the OS , they are interfaces between the hardware and the Operating System but they do work differently 
+    differnt but have same interface like brake pedal of lexus(630-black [and a figure on front seat in winter being in hunza valley]-hhhhhhh) and toyota corolla are same but the underlying logic is not common
+
+BIOS:
+    Basic Input Output System
+    it is older
+
+UEFI:
+    Unified Extensible Firmware Interface
+    new one
+
+
+
+so we have hardrive on our sys, now using:
+bios: - the old method of booting a computer, you would have the very 1st secter in the hardrive will be the boot secter(MBR-master boot record)
+    the MBR will tell the computer where the partitions are etc
+    limitaions:
+        you can have 4 partitions using the BIOS and MBR combinations           {there are some hacks to play around it like you can add multiple partiitions within one of the 4 and so now u can have more[extended partitions]}
+        limitaion of size withthe drive-> how much this boot record can actually refrence, it can be small like 2TB (T = tera = 10^12) instead of ExaBytes (E = exa = 10^18)-{i think}
+
+
+So, UEFI is a replacement for the bios technology and rather than just have the single boot secter it will have an entire partiiton on the sys  and that prtiiton is where all the boot code of whatever OS will lives 
+also you can have tons and tons of partiitions as UEFI uses a different partiiton scheme and it can address much larger drives
+the UEFI also support secure booting [...]
+
+
+
+
+Boot Loaders:
+    GRUB and GRUB2 
+    GRUB-Grand Unified Boot Loader -- it is just a way that the computer transition from bios or uefi booting conditions into the actual operating System itself 
+        it is what tells the computer like where is my partions etc 
+    they both do the same thing but the GRUB2 is next iteration of GRUB, bellow are some differences:
+
+    grub:
+        older as often called GRUB lagacy but it is still on few operating syss i.e slackware 
+        difficult to modify 
+        boot manu usually displays on boot
+
+    grub2:
+        new one
+        easy to modify/customizable 
+            cat /etc/default/grub
+        can boot from an ISO file, USB, UUID, devises(devsda)
+        hidden boot manu - if wanna see press/hold shift key on boot  
+
+
+
+    Finding which one is one the computer:
+        look inside the boot grub folder(/boot/grub) - ls and if you see manu.lst, grub.conf => you are using GRUB lagacy becuase GRUB2 doesnot have those configuration file intead it have grub.cfg 
+
+
+    moral of the confusing story(hhhhh):
+        grub2 is an advancement as it easier for the end user to manage 
+
+
+
+Boot methods:
+    as linus is flexible so it can be boot from many methods
+
+
+    

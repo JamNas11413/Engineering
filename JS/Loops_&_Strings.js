@@ -15,12 +15,12 @@
 //// again and so on until the condition becomes false
 //
 ////// to find sum of first n no.
-////let sum = 0;
-////for (let n = 1; n <= 10; n++) {
-////    console.log(n,"+",sum ,"= ", sum+n);
-////    sum = sum+n;
-//////    console.log(sum);
-////}
+// let sum = 0;
+// for (let n = 1; n <= 10; n++) {
+//    console.log(n,"+",sum ,"= ", sum+n);
+//    sum = sum+n;
+// //    console.log(sum);
+// }
 ////console.log("loop is ended! ");
 ////console.log("sum:",sum);
 //////console.log(n);   // n is not defined-> we can't access out side of the block as we define it via let if we did it via var we can

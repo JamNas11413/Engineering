@@ -1,0 +1,18 @@
+source code:
+    the code that programmer writes and understands
+
+machine code:
+    the code that computers understands(0s and 1s)
+
+SO WE HAVE TO CONVERT OUR SOURCE CODE TO MACHINE CODE so THE MACHINE COULD UNDERSTAND IT 
+
+        source code ----> compiler ------> machine code     
+            # compiler is a piece of software that other peopple have written that we can use to convert a specific syntax to byte code/machine code
+
+when running a programe we have to 1st compile it {make filenameWithoutSuffix}
+and then run it {./hello  -> means somewhere in my current directory there is hello file which is alreday compiled (will create a new file)}  
+    if change source code and not compile the new version the machine code gonna stay the saame ad givrs the same output 
+
+
+header files:
+    

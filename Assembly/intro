@@ -1,2 +1,44 @@
-Assembly and computer architechure
-    
+bacis computer architecture:
+    I/O <---> processor <---> memory
+
+lets take:
+    processor <---> memory
+        # mens that i have some data in the memory and i wanna perform an operation on it through the processor
+            # so we needa read the exact data from the memory
+                # so we have to tell it the exact location of the memory the data is stored in
+            # a way to move the data from the memory to processor and vice versa --> data bus
+
+data bus:
+    A data bus is a physical or virtual communication pathway that transfers the actual data between different hardware components inside a computer—such as the CPU, RAM, and peripherals—or between different software applications. It acts like a shared digital highway where the real information (values, commands, or instructions) travels back and forth.
+
+
+                                        ______________         address bus           _______________
+                                        |            |  ------------------------>    |             |
+                                        |            |          dats bus             |             |
+                                        | processor  |  <------------------------>   |   memory    |   
+                                        |            |          control bus          |             |
+                                        |____________|  <========================>   |_____________|
+
+
+
+
+
+               Dimensions of Memory
+
+     Horizontal Dimension = Width of a memory cell
+                    <---------->
+     Binary        { ┌─────────┐ ↑
+    addresses      { │         │ │
+       of          { ├─────────┤ │ Vertical
+     memory        { │         │ │ Dimension
+     cells         { ├─────────┤ │     =
+   00000000 -------> │    :    │ │  Size of
+   00000001 -------> ├────:────┤ │  memory
+      :            { │    :    │ │
+   00100011 -------> ├─────────┤ │
+   00100100 -------> │         │ │
+   00100101 -------> └─────────┘ ↓
+
+
+regiters in cpu:
+    CPU registers are ultra-fast, tiny storage spots inside the processor that hold data, memory addresses, and instructions currently being used. Key registers include the Program Counter (PC), Accumulator (AC), and Memory Address Register (MAR)

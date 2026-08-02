@@ -15,4 +15,15 @@ and then run it {./hello  -> means somewhere in my current directory there is he
 
 
 header files:
-    
+    files that ends om .h 
+    stdio.h
+    contains code that other people wrote that we can use in our own programes 
+    so the header files gives us access to library 
+        so if wnna use printfwe have to include the header file that definese that func 
+            i this case the header file is stdio.h {standard io . h}
+
+docs for c:
+    the official manuall pages(man pages)
+
+
+    arguments ---> function ---> sideeffect / reurn value      # A return value is the direct output a function sends back, while       side effect is any change a function makes outside its local scope
